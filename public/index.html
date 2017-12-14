@@ -2,11 +2,18 @@
 <html>
 <head>
 	<title>YeastieBois</title>
+
+	<!-- JQuery -->
+	<script
+  	src="https://code.jquery.com/jquery-3.2.1.min.js"
+  	integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  	crossorigin="anonymous"></script>
 </head>
 <body>
 	<h1>Yeastie Bois Beer Form</h1>
 
 	<form name="beerReviewForm">
+
 		<h3>Aroma</h3>
 		<h4>Malt Aroma</h4>
 		<input type="checkbox" name="aromaMalt" value="sweet">Sweet
@@ -69,11 +76,12 @@
 		<input type="checkbox" name="flavorHops" value="estery">Estery
 
 		<h4>Bonus Points</h4>
-		Guess IBU<input type="text" name="bonusPoints" >
-		Guess ABV<input type="text" name="bonusPoints" >
+		Guess IBU<input type="text" id="ibuBonusPoints" >
+		Guess ABV<input type="text" id="abvBonusPoints" >
 
-		<button><input type="submit" name=""></button>
+		<button><input type="submit" id="reviewSubmitButton"></button>
 	</form>
-
+	
+	<script type="text/javascript" src="js/submitForm.js"></script>
 </body>
 </html>
