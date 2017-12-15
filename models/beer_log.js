@@ -2,63 +2,65 @@ module.exports = function(sequelize, DataTypes) {
 	var Beer = sequelize.define("Beer", {
 		Beer_Name: {
 			type: DataTypes.STRING,
-			allowNull: false
+			allowNull: true
 
 		},
 		Brewery: {
 			type: DataTypes.STRING,
-			allowNull: false
+			allowNull: true
 		},
-		Aroma-Malt: {
+		Aroma_Malt: {
 			type: DataTypes.STRING,
 			allowNull: true
 		},
-		Aroma-Hops: {
+		Aroma_Hops: {
 			type: DataTypes.STRING,
 			allowNull: true
 		},
-		Appearance-Clarity: {
+		Appearance_Clarity: {
 			type: DataTypes.STRING,
 			allowNull: true
 		},
-		Appearance-Color: {
+		Appearance_Color: {
 			type: DataTypes.STRING,
 			allowNull: true
 		},
-		Flavor-Malt: {
+		Flavor_Malt: {
 			type: DataTypes.STRING,
 			allowNull: true
 		},
-		Flavor-Hops: {
+		Flavor_Hops: {
 			type: DataTypes.STRING,
 			allowNull: true
 		},
 		IBU: {
 			type: DataTypes.INTEGER,
-			allowNull: false
+			allowNull: true
 		},
 		ABV: {
-			type: DataTypes.INTEGER,
-			allowNull: false
+			type: DataTypes.DECIMAL(10,2),
+			allowNull: true
 		},
-		Country-Of-Origin: {
+		Country_Of_Origin: {
 			type: DataTypes.STRING,
-			allowNull: false
+			allowNull: true
 		},
-		City/State-Of-Origin: {
+		City_State_Of_Origin: {
 			type: DataTypes.STRING,
 			allowNull: true
 		},
 		Style: {
 			type: DataTypes.STRING,
-			allowNull: false
+			allowNull: true
 		},
-		Total-Points: {
+		Total_Points: {
 			type: DataTypes.INTEGER,
-			allowNull: false
+			allowNull: true
 		}
 
 
+	},{
+		timestamps: false
 	});
 	return Beer;
 }

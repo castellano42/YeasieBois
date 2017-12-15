@@ -13,6 +13,8 @@
 	<h1>Yeastie Bois Beer Form</h1>
 
 	<form name="beerReviewForm">
+		<h3>Beer Name:</h3>
+		  <select id="allBeerList" name="beerName"></select>
 
 		<h3>Aroma</h3>
 		<h4>Malt Aroma</h4>
@@ -79,9 +81,23 @@
 		Guess IBU<input type="text" id="ibuBonusPoints" >
 		Guess ABV<input type="text" id="abvBonusPoints" >
 
+		<h4>Personal Opinion</h4>
+		<p> Rating (1-10):<input type="text" id="rating"></p>
+		<p>Comments: <input type="text" id="comments"></p>
+
 		<button><input type="submit" id="reviewSubmitButton"></button>
 	</form>
 	
+	<!-- Submission Form JS -->
 	<script type="text/javascript" src="js/submitForm.js"></script>
+
+	<!-- Grade Submission JS -->
+	<script type="text/javascript" src="js/compareAnswers.js"></script>
+
+	<!-- List All Beers -->
+	<script type="text/javascript" src="js/listAllBeers.js"></script>
+
+
+
 </body>
 </html>
