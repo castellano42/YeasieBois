@@ -48,4 +48,32 @@ module.exports = function(app) {
 		});
 	});
 
+	app.post("/api/posts/:userID", function(req, res) {
+		var query = {};
+		if (req.query.userID) {
+			query.userID = req.query.userID;
+		}
+
+		db.FullUserBeerReview.findOne({
+			where: {
+				Beer_Name: beerName,
+				Brewery: brewery,
+				Aroma_Malt: aromaMaltValues,
+				Aroma_Hops: aromaHopsValues,
+				Appearance_Clarity: clarityValues,
+				Appearance_Color: beerColorValues,
+				Flavor_Malt: flavorMaltValues,
+				Flavor_Hops: flavorHopsValues,
+				IBU: ibuValue,
+				ABV: abvValue,
+				Rating: rating,
+				Comments: comments
+
+			}
+
+		});
+	});
+
+
+
 };

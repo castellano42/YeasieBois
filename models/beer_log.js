@@ -9,27 +9,27 @@ module.exports = function(sequelize, DataTypes) {
 			type: DataTypes.STRING,
 			allowNull: false
 		},
-		Aroma-Malt: {
+		Aroma_Malt: {
 			type: DataTypes.STRING,
 			allowNull: true
 		},
-		Aroma-Hops: {
+		Aroma_Hops: {
 			type: DataTypes.STRING,
 			allowNull: true
 		},
-		Appearance-Clarity: {
+		Appearance_Clarity: {
 			type: DataTypes.STRING,
 			allowNull: true
 		},
-		Appearance-Color: {
+		Appearance_Color: {
 			type: DataTypes.STRING,
 			allowNull: true
 		},
-		Flavor-Malt: {
+		Flavor_Malt: {
 			type: DataTypes.STRING,
 			allowNull: true
 		},
-		Flavor-Hops: {
+		Flavor_Hops: {
 			type: DataTypes.STRING,
 			allowNull: true
 		},
@@ -38,14 +38,14 @@ module.exports = function(sequelize, DataTypes) {
 			allowNull: false
 		},
 		ABV: {
-			type: DataTypes.INTEGER,
+			type: DataTypes.DECIMAL(10, 2),
 			allowNull: false
 		},
-		Country-Of-Origin: {
+		Country_Of_Origin: {
 			type: DataTypes.STRING,
 			allowNull: false
 		},
-		City/State-Of-Origin: {
+		City_or_State_Of_Origin: {
 			type: DataTypes.STRING,
 			allowNull: true
 		},
@@ -53,7 +53,7 @@ module.exports = function(sequelize, DataTypes) {
 			type: DataTypes.STRING,
 			allowNull: false
 		},
-		Total-Points: {
+		Total_Points: {
 			type: DataTypes.INTEGER,
 			allowNull: false
 		}
