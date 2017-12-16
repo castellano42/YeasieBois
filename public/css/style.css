@@ -1,8 +1,56 @@
-.page-header{
+.page-header{ 
 	background-color:#0071b2;
+	border-radius: 25px;
 }
 h1{
-	font-size:50px;
+	padding-top: 18px;
+	text-align: center;
+	font-size:55px;
 	color:#FFC049;
 	font-family: "arcade interlaced";
+}
+body{
+	background-color:#FFC049;
+}
+
+body{
+	color:#c63c22;
+	font-family:"arcade interlaced";
+	border:4px solid #c63c22;
+	
+
+}
+/*.border-top-0{
+	color:red;
+
+}*/
+h4{
+	color:#0071b2;
+}
+
+#logo{
+	height:150px;
+	width:150px;
+}
+
+.row{
+	border:1px dashed #c63c22 ;
+	margin:8px;
+}
+
+h3{
+	color:#FFC049;
+	text-align: center;
+}
+
+#aroma{
+	background-color: #c63c22;
+}
+
+#appearance{
+	background-color: #c63c22;
+}
+
+#flavor{
+	background-color: #c63c22;
 }
