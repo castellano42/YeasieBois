@@ -48,37 +48,32 @@ module.exports = function(app) {
 		});
 	});
 
-	// ================================================
-	// 		     COMPARE LOGIN CREDENTIALS
-	// ================================================
-	app.get("/login", function(req, res) {
-			console.log("Req.Body");
-			console.log(req.params);
-		db.Login.findAll({
-			where: {
-				Username: req.body.loginCredentials
-			}
-		}).then(function(loginCredentials) {
-			
-			res.json(JSON.stringify(loginCredentials));
-			//use conditionals to make sure password and username are equivalent
-			//if equal, gen auth token and post it to said user and store it as a cookie
-			//redirect to index.html
-		});
-	});
 
 
-	// ================================================
-	// 		     User Sign Up
-	// ================================================
-	app.post("/signup", function(req, res) {
-			console.log(req.body.loginCredentials);
-		db.Login.findAll({
+
+	app.post("/api/posts/:userID", function(req, res) {
+		var query = {};
+		if (req.query.userID) {
+			query.userID = req.query.userID;
+		}
+
+		db.FullUserBeerReview.findOne({
 			where: {
-				Username: req.params.username
+				Beer_Name: beerName,
+				Brewery: brewery,
+				Aroma_Malt: aromaMaltValues,
+				Aroma_Hops: aromaHopsValues,
+				Appearance_Clarity: clarityValues,
+				Appearance_Color: beerColorValues,
+				Flavor_Malt: flavorMaltValues,
+				Flavor_Hops: flavorHopsValues,
+				IBU: ibuValue,
+				ABV: abvValue,
+				Rating: rating,
+				Comments: comments
+
 			}
-		}).then(function(loginCredentials) {
-			res.json(loginCredentials);
+
 		});
 	});
 
