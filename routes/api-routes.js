@@ -48,9 +48,6 @@ module.exports = function(app) {
 		});
 	});
 
-
-
-
 	app.post("/api/posts/:userID", function(req, res) {
 		var query = {};
 		if (req.query.userID) {
@@ -71,9 +68,22 @@ module.exports = function(app) {
 				ABV: abvValue,
 				Rating: rating,
 				Comments: comments
-
 			}
+		});
+	});
 
+	// ==============================================
+	// 			Login Route
+	// ==============================================
+	app.get("/login", function(req, res) {
+		console.log("Req Body");
+		console.log(req.body);
+		db.Login.findAll({
+			where: {
+				Username: req.body
+			}
+		}).then(function(loginCredentials) {
+			res.json(loginCredentials);
 		});
 	});
 

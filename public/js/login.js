@@ -1,27 +1,27 @@
 // ======================================
 // 			Login Submit
 // ======================================
-$("#submitLoginInfo").on("click", function(){
-	event.preventDefault();
-	var loginCredentials = {
-		username: $("#username").val(),
-		password: $("#password").val()
-	};
-	console.log("Pre Ajax: " + JSON.stringify(loginCredentials));
-	//make a get request with the route "/login"
-	//perform comparison logic on the back end in the routes to see if the user matches db info
-	$.get("/login", loginCredentials);
-});
+// $("#submitLoginInfo").on("click", function(){
+// 	event.preventDefault();
+// 	var loginCredentials = {
+// 		username: $("#username").val(),
+// 		password: $("#password").val()
+// 	};
+// 	console.log("Pre Ajax: " + JSON.stringify(loginCredentials));
+// 	//make a get request with the route "/login"
+// 	//perform comparison logic on the back end in the routes to see if the user matches db info
+// 	$.get("/login", loginCredentials);
+// });
 
 
 // ======================================
 // 			Sign Up Submit
 // ======================================
-$("#signUpSubmit").on("click", function(){
-	event.preventDefault();
+// $("#signUpSubmit").on("click", function(){
+// 	event.preventDefault();
 
 
-});
+// });
 
 
 // -Shouldn't actually need these on click functions if we are 
