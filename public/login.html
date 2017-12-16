@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Yeastie Bois Login</title>
+
+	<!-- JQuery -->
+	<script
+  	src="https://code.jquery.com/jquery-3.2.1.min.js"
+  	integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  	crossorigin="anonymous"></script>
+</head>
+<body>
+	<form action=""> <!-- Compare credentials with database -->
+		<h1>Login</h1>
+		<p>Username: <input type="text" name="username" id="username"></p>
+		<p>Password: <input type="password" name="password" id="password"></p>
+		<input type="submit" name="submitLoginInfo" id="submitLoginInfo">
+	</form>
+
+	<form action=""> <!-- Insert credentials into userInfo table -->
+		<h1>Sign Up</h1>
+		<p>Email Address: <input type="text" name="signUpEmail" id="signUpEmail"></p>
+		<p>Username: <input type="text" name="signUpUser" id="signUpUser"></p>
+		<p>Enter Password: <input type="password" name="signUpPass" id="signUpPass"></p>
+		<input type="submit" name="signUpSubmit" id="signUpSubmit">
+	</form>
+
+	<script type="text/javascript" src="./js/login.js"></script>
+</body>
+</html>
