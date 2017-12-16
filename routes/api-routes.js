@@ -48,6 +48,9 @@ module.exports = function(app) {
 		});
 	});
 
+
+
+
 	app.post("/api/posts/:userID", function(req, res) {
 		var query = {};
 		if (req.query.userID) {
@@ -73,7 +76,5 @@ module.exports = function(app) {
 
 		});
 	});
-
-
 
 };
