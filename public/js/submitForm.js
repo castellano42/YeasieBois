@@ -39,7 +39,7 @@ $("#reviewSubmitButton").on("click", function(){
 
 
 	
-	
+	//!!!!!!!!! Add user Id !!!!!!!!!!!!!!!!!!!!
 	fullUserBeerReview = {
 		Beer_Name: beerName,
 		Brewery: brewery,
@@ -56,10 +56,7 @@ $("#reviewSubmitButton").on("click", function(){
 	};
 	console.log(JSON.stringify(fullUserBeerReview, null, 2));
 
-	//CALL AJAX POST HERE- sends object to database
-	// $.post("", fullUserBeerReview, function(result){
-	// 	console.log("User Submission: " + JSON.stringify(result);)
-	// });
+	
 });
 
 
