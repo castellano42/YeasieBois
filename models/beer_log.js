@@ -38,23 +38,26 @@ module.exports = function(sequelize, DataTypes) {
 			allowNull: true
 		},
 		ABV: {
-<<<<<<< HEAD
-			type: DataTypes.DECIMAL(10,2),
-			allowNull: true
-=======
 			type: DataTypes.DECIMAL(10, 2),
 			allowNull: false
->>>>>>> master
 		},
 		Country_Of_Origin: {
 			type: DataTypes.STRING,
 			allowNull: true
 		},
 <<<<<<< HEAD
+<<<<<<< HEAD
 		City_State_Of_Origin: {
 =======
 		City_or_State_Of_Origin: {
 >>>>>>> master
+=======
+
+
+
+		City_or_State_Of_Origin: {
+
+>>>>>>> 99f78019c227db34ee0d08e71919a0408dae5ef1
 			type: DataTypes.STRING,
 			allowNull: true
 		},
