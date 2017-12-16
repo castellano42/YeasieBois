@@ -4,80 +4,153 @@
 	<title>YeastieBois</title>
 
 	<!-- JQuery -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	 <link rel="stylesheet" type="text/css" href="css/style.css">
 	<script
   	src="https://code.jquery.com/jquery-3.2.1.min.js"
   	integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
   	crossorigin="anonymous"></script>
 </head>
 <body>
-	<h1>Yeastie Bois Beer Form</h1>
+	<span class="border-top-0"></span>
+	<div class ="container">
+	<div class="row">
+	<div class="col-sm-12 col-md-12 col-lg-12">
+	<div class="page-header">
+	<h1 id="yeast">Yeastie Bois  <img src="./images/beerlogo.png" id="logo"></h1> <!-- <h3>Beer Form</h3> -->
+</div>		
+	</div>
+	</div>
+	<!-- <div class="row">
+		<div class="col-sm-6 col-md-6 col-lg-6"> -->
+   <!--  <div class="input-group">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button">Search Beer</button>
+      </span>
+      <input type="text" class="form-control" placeholder="Search for...">
+    </div><!/input-group --> 
+ <!--  </div> -->
+	<!-- <div class="col-sm-12 col-md-12 col-lg-12">	
+		<form name="beerReviewForm">
+		 <h3>Beer Search:</h3>
+  		<input type="text" name="beerName"><br> <button type="submit">Submit</button>
+  	</div> -->
+	<!-- </div> -->
+	<div class="row" id="aroma">
+	<div class="col-sm-12 col-md-12 col-lg-12">	
+		<h3>Aroma</h3>
+	</div>
+	</div>
 
+<<<<<<< HEAD
 	<form name="beerReviewForm">
 		<h3>Beer Name:</h3>
 		  <select id="allBeerList" name="beerName"></select>
+=======
+>>>>>>> master
 
-		<h3>Aroma</h3>
+	<div class="row">
+	<div class="col-sm-12 col-md-12 col-lg-12">	
 		<h4>Malt Aroma</h4>
-		<input type="checkbox" name="aromaMalt" value="sweet">Sweet
-		<input type="checkbox" name="aromaMalt" value="grainy">Grainy
-		<input type="checkbox" name="aromaMalt" value="toasty">Toasty
-		<input type="checkbox" name="aromaMalt" value="fruity">Fruity
-		<input type="checkbox" name="aromaMalt" value="burnt">Burnt
-		<input type="checkbox" name="aromaMalt" value="rich">Rich
-		<input type="checkbox" name="aromaMalt" value="caramel">Caramel
-		<input type="checkbox" name="aromaMalt" value="estery">Estery
+		<input type="checkbox" name="aromaMalt" value="sweet"> Sweet
+		<input type="checkbox" name="aromaMalt" value="grainy"> Grainy
+		<input type="checkbox" name="aromaMalt" value="toasty"> Toasty
+		<input type="checkbox" name="aromaMalt" value="fruity"> Fruity
+		<input type="checkbox" name="aromaMalt" value="burnt"> Burnt
+		<input type="checkbox" name="aromaMalt" value="rich"> Rich
+		<input type="checkbox" name="aromaMalt" value="caramel"> Caramel
+		<input type="checkbox" name="aromaMalt" value="estery"> Estery
+	</div>
+	</div>
 
+
+	<div class="row">
+	<div class="col-sm-12 col-md-12 col-lg-12">	
 		<h4>Hops Aroma</h4>
-		<input type="checkbox" name="aromaHops" value="peppery">Peppery
-		<input type="checkbox" name="aromaHops" value="citrus">Citrus
-		<input type="checkbox" name="aromaHops" value="floral">Floral
-		<input type="checkbox" name="aromaHops" value="spicy">Spicy
-		<input type="checkbox" name="aromaHops" value="earthy">Earthy
-		<input type="checkbox" name="aromaHops" value="piney">Piney
-		<input type="checkbox" name="aromaHops" value="fruity">Fruity
-		<input type="checkbox" name="aromaHops" value="estery">Estery
+		<input type="checkbox" name="aromaHops" value="peppery"> Peppery
+		<input type="checkbox" name="aromaHops" value="citrus"> Citrus
+		<input type="checkbox" name="aromaHops" value="floral"> Floral
+		<input type="checkbox" name="aromaHops" value="spicy"> Spicy
+		<input type="checkbox" name="aromaHops" value="earthy"> Earthy
+		<input type="checkbox" name="aromaHops" value="piney"> Piney
+		<input type="checkbox" name="aromaHops" value="fruity"> Fruity
+		<input type="checkbox" name="aromaHops" value="estery"> Estery
+	</div>
+	</div>
 
+
+	<div class="row" id="appearance">
+	<div class="col-sm-12 col-md-12 col-lg-12">	
 		<h3>Appearance</h3>
+	</div>
+	</div>	
+	<div class="row">
+	<div class="col-sm-12 col-md-12 col-lg-12">	
 		<h4>Clarity</h4>
-		<input type="checkbox" name="clarity" value="clear">Clear
-		<input type="checkbox" name="clarity" value="cloudy">Cloudy
-		<input type="checkbox" name="clarity" value="hazy">Hazy
+		<input type="checkbox" name="clarity" value="clear"> Clear
+		<input type="checkbox" name="clarity" value="cloudy"> Cloudy
+		<input type="checkbox" name="clarity" value="hazy"> Hazy
+	</div>
+	</div>
 
 
+	<div class="row">
+	<div class="col-sm-12 col-md-12 col-lg-12">	
 		<h4>Color</h4>
-		<input type="checkbox" name="beerColor" value="straw">Straw
-		<input type="checkbox" name="beerColor" value="yellow">Yellow
-		<input type="checkbox" name="beerColor" value="gold">Gold
-		<input type="checkbox" name="beerColor" value="amber">Amber
-		<input type="checkbox" name="beerColor" value="red">Red
-		<input type="checkbox" name="beerColor" value="copper">Copper
-		<input type="checkbox" name="beerColor" value="brown">Brown
-		<input type="checkbox" name="beerColor" value="black">Black
+		<input type="checkbox" name="beerColor" value="straw"> Straw
+		<input type="checkbox" name="beerColor" value="yellow"> Yellow
+		<input type="checkbox" name="beerColor" value="gold"> Gold
+		<input type="checkbox" name="beerColor" value="amber"> Amber
+		<input type="checkbox" name="beerColor" value="red"> Red
+		<input type="checkbox" name="beerColor" value="copper"> Copper
+		<input type="checkbox" name="beerColor" value="brown"> Brown
+		<input type="checkbox" name="beerColor" value="black"> Black
+	</div>
+	</div>
 
 
-
+	<div class="row" id="flavor">
+	<div class="col-sm-12 col-md-12 col-lg-12">	
 		<h3>Flavor Notes</h3>
+	</div>
+	</div>
+
+
+	<div class="row">
+	<div class="col-sm-12 col-md-12 col-lg-12">		
 		<h4>Malt Flavor</h4>
-		<input type="checkbox" name="flavorMalt" value="sweet">Sweet
-		<input type="checkbox" name="flavorMalt" value="grainy">Grainy
-		<input type="checkbox" name="flavorMalt" value="toasty">Toasty
-		<input type="checkbox" name="flavorMalt" value="fruity">Fruity
-		<input type="checkbox" name="flavorMalt" value="burnt">Burnt
-		<input type="checkbox" name="flavorMalt" value="rich">Rich
-		<input type="checkbox" name="flavorMalt" value="caramel">Caramel
-		<input type="checkbox" name="flavorMalt" value="estery">Estery
+		<input type="checkbox" name="flavorMalt" value="sweet"> Sweet
+		<input type="checkbox" name="flavorMalt" value="grainy"> Grainy
+		<input type="checkbox" name="flavorMalt" value="toasty"> Toasty
+		<input type="checkbox" name="flavorMalt" value="fruity"> Fruity
+		<input type="checkbox" name="flavorMalt" value="burnt"> Burnt
+		<input type="checkbox" name="flavorMalt" value="rich"> Rich
+		<input type="checkbox" name="flavorMalt" value="caramel"> Caramel
+		<input type="checkbox" name="flavorMalt" value="estery"> Estery
+	</div>
+	</div>
 
+
+	<div class="row">
+	<div class="col-sm-12 col-md-12 col-lg-12">	
 		<h4>Hops Flavor</h4>
-		<input type="checkbox" name="flavorHops" value="peppery">Peppery
-		<input type="checkbox" name="flavorHops" value="citrus">Citrus
-		<input type="checkbox" name="flavorHops" value="floral">Floral
-		<input type="checkbox" name="flavorHops" value="spicy">Spicy
-		<input type="checkbox" name="flavorHops" value="earthy">Earthy
-		<input type="checkbox" name="flavorHops" value="piney">Piney
-		<input type="checkbox" name="flavorHops" value="fruity">Fruity
-		<input type="checkbox" name="flavorHops" value="estery">Estery
+		<input type="checkbox" name="flavorHops" value="peppery"> Peppery
+		<input type="checkbox" name="flavorHops" value="citrus"> Citrus
+		<input type="checkbox" name="flavorHops" value="floral"> Floral
+		<input type="checkbox" name="flavorHops" value="spicy"> Spicy
+		<input type="checkbox" name="flavorHops" value="earthy"> Earthy
+		<input type="checkbox" name="flavorHops" value="piney"> Piney
+		<input type="checkbox" name="flavorHops" value="fruity"> Fruity
+		<input type="checkbox" name="flavorHops" value="estery"> Estery
+	</div>
+	</div>
+		
 
+	<div class="row">
+	<div class="col-sm-12 col-md-12 col-lg-12">	
 		<h4>Bonus Points</h4>
+<<<<<<< HEAD
 		Guess IBU<input type="text" id="ibuBonusPoints" >
 		Guess ABV<input type="text" id="abvBonusPoints" >
 
@@ -89,6 +162,17 @@
 	</form>
 	
 	<!-- Submission Form JS -->
+=======
+		Guess IBU <input type="text" id="ibuBonusPoints" >
+		Guess ABV <input type="text" id="abvBonusPoints" >
+		<button><input type="submit" id="reviewSubmitButton"></button>
+		</form>
+	</div>
+	</div>
+
+		
+	</div>
+>>>>>>> master
 	<script type="text/javascript" src="js/submitForm.js"></script>
 
 	<!-- Grade Submission JS -->
