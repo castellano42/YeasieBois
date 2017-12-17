@@ -10,6 +10,7 @@
   	crossorigin="anonymous"></script>
 </head>
 <body>
+	<!-- ============== LOGIN =============== -->
 	<form action="/login" method="GET"> <!-- Compare credentials with database -->
 		<h1>Login</h1>
 		<p>Username: <input type="text" name="username" id="username"></p>
@@ -17,7 +18,9 @@
 		<input type="submit" name="submitLoginInfo" id="submitLoginInfo">
 	</form>
 
-	<form action="/api/posts/:us" method="POST"> <!-- Insert credentials into userInfo table -->
+	
+	<!-- ============== SIGN UP =============== -->
+	<form action="/newuser" method="POST"> <!-- Insert credentials into userInfo table -->
 		<h1>Sign Up</h1>
 		<p>Email Address: <input type="text" name="signUpEmail" id="signUpEmail"></p>
 		<p>Username: <input type="text" name="signUpUser" id="signUpUser"></p>
@@ -25,6 +28,9 @@
 		<input type="submit" name="signUpSubmit" id="signUpSubmit">
 	</form>
 
-	<script type="text/javascript" src="./js/login.js"></script>
+	<script type="text/javascript" src="./js/login.js">
+		
+
+	</script>
 </body>
 </html>

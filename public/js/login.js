@@ -19,7 +19,11 @@
 // ======================================
 // $("#signUpSubmit").on("click", function(){
 // 	event.preventDefault();
-
+// 	var newUser = {
+// 		username: $("#signUpUser")val(),
+// 		password: $("#")val(),
+// 		email: $("#signUpEmail")val(),
+// 	};
 
 // });
 

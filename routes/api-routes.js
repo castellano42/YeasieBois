@@ -63,7 +63,7 @@ module.exports = function(app) {
 			query.userID = req.query.userID;
 		}
 
-		db.FullUserBeerReview.findOne({
+		db.FullUserBeerReview.create({
 			where: {
 				Beer_Name: beerName,
 				Brewery: brewery,
@@ -81,6 +81,21 @@ module.exports = function(app) {
 		});
 	});
 
+	// ==============================================
+	// 			Add Auth Token to User ID --- Probably Not Necessary
+	// ==============================================
+	// 	app.put("/authtoken/:userId", function(req, res) {
+
+	// 	//Set user id equal to a variable from the req.query.id;
+
+	// 	db.Login.update(token, {
+	// 		where: {
+	// 			//where id = Id in that database;
+	// 			id: req.params.id,
+	// 			AuthToken: token
+	// 		}
+	// 	});
+	// });
 
 	// ==============================================
 	// 			Login Route
@@ -121,6 +136,28 @@ module.exports = function(app) {
 				res.send("Sorry there was an error logging in.");
 			}
 		});
+	});
+
+	// ==============================================
+	// 			Sign Up Route
+	// ==============================================
+	app.post("/newuser", function(req, res) {
+		console.log(req);
+		var username = req.body.signUpUser;
+		var email = req.body.signUpEmail;
+		var password = req.body.signUpPass;
+
+		console.log(username);
+		console.log(email);
+		console.log(password);
+
+		db.Login.create({
+			Username: username,
+			Password: password,
+			Email: email
+		}).then(function(newUser){
+			res.json(newUser);
+		})
 	});
 
 };
