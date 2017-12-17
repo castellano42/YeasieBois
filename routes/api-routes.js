@@ -76,14 +76,24 @@ module.exports = function(app) {
 	// 			Login Route
 	// ==============================================
 	app.get("/login", function(req, res) {
-		console.log("Req Body");
-		console.log(req.body);
+		var username = req.query.username;
+		var password = req.query.password;
 		db.Login.findAll({
 			where: {
-				Username: req.body
+				Username: username
 			}
 		}).then(function(loginCredentials) {
-			res.json(loginCredentials);
+			if(loginCredentials[0]){
+				if(password === loginCredentials[0].Password){
+					// alert("Sign in successful");
+					res.json(loginCredentials);
+				} else{
+					res.send("Username or password incorrect.");
+				}
+			
+			} else {
+				res.send("Sorry there was an error logging in.");
+			}
 		});
 	});
 
