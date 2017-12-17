@@ -1,7 +1,13 @@
 var db = require("../models");
+var randToken  = require("rand-token");
+
+
+
 
 module.exports = function(app) {
-
+	// ==============================================
+	// 			Beer Table/API Routes
+	// ==============================================
 	app.get("/api/beers", function(req, res) {
 		db.Beer.findAll({}).then(function(dbBeer) {
 			res.json(dbBeer);
@@ -48,6 +54,9 @@ module.exports = function(app) {
 		});
 	});
 
+	// ==============================================
+	// 			User Info Routes
+	// ==============================================
 	app.post("/api/posts/:userID", function(req, res) {
 		var query = {};
 		if (req.query.userID) {
@@ -72,6 +81,7 @@ module.exports = function(app) {
 		});
 	});
 
+
 	// ==============================================
 	// 			Login Route
 	// ==============================================
@@ -85,7 +95,23 @@ module.exports = function(app) {
 		}).then(function(loginCredentials) {
 			if(loginCredentials[0]){
 				if(password === loginCredentials[0].Password){
-					// alert("Sign in successful");
+					var token = randToken.generate(16);
+					var userId = loginCredentials[0].id;
+					console.log("User Id " + userId);
+					var putQuery = "authToken/" + userId;
+					console.log(token);
+					 
+					// ========= Add authToken to user info in DB ========
+					db.Login.update({
+						AuthToken: token
+					},
+					{
+						where: {
+						//where id = Id in that database;
+							id: userId
+						}
+					});
+					res.cookie('authToken', token);
 					res.json(loginCredentials);
 				} else{
 					res.send("Username or password incorrect.");
