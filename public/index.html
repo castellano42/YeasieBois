@@ -7,6 +7,9 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
 	 <link rel="stylesheet" type="text/css" href="css/style.css">
+	 <link href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet">
+	 <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
+
 	<script
   	src="https://code.jquery.com/jquery-3.2.1.min.js"
   	integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
@@ -17,26 +20,15 @@
 	<div class ="container">
 	<div class="row">
 	<div class="col-sm-12 col-md-12 col-lg-12">
-	<div class="page-header">
-	<h1 id="yeast">Yeastie Bois  <img src="./images/beerlogo.png" id="logo"></h1> <!-- <h3>Beer Form</h3> -->
+	 <div class="jumbotron">
+	 	 <h1 id="yeast">Yeastie Bois  <img src="./images/beerlogo.png" id="logo"></h1>
+	</div>
+	
+	
 </div>		
 	</div>
-	</div>
-	<!-- <div class="row">
-		<div class="col-sm-6 col-md-6 col-lg-6"> -->
-   <!--  <div class="input-group">
-      <span class="input-group-btn">
-        <button class="btn btn-default" type="button">Search Beer</button>
-      </span>
-      <input type="text" class="form-control" placeholder="Search for...">
-    </div><!/input-group --> 
- <!--  </div> -->
-	<!-- <div class="col-sm-12 col-md-12 col-lg-12">	
-		<form name="beerReviewForm">
-		 <h3>Beer Search:</h3>
-  		<input type="text" name="beerName"><br> <button type="submit">Submit</button>
-  	</div> -->
-	<!-- </div> -->
+	
+	
 	<div class="row" id="aroma">
 	<div class="col-sm-12 col-md-12 col-lg-12">	
 		<h3>Aroma</h3>
@@ -46,7 +38,7 @@
 
 	<div class="row">
 	<div class="col-sm-12 col-md-12 col-lg-12">	
-		<h4>Malt Aroma</h4>
+		<h4 class ="options">Malt Aroma</h4>
 		<input type="checkbox" name="aromaMalt" value="sweet"> Sweet
 		<input type="checkbox" name="aromaMalt" value="grainy"> Grainy
 		<input type="checkbox" name="aromaMalt" value="toasty"> Toasty
@@ -61,7 +53,7 @@
 
 	<div class="row">
 	<div class="col-sm-12 col-md-12 col-lg-12">	
-		<h4>Hops Aroma</h4>
+		<h4 class ="options">Hops Aroma</h4>
 		<input type="checkbox" name="aromaHops" value="peppery"> Peppery
 		<input type="checkbox" name="aromaHops" value="citrus"> Citrus
 		<input type="checkbox" name="aromaHops" value="floral"> Floral
@@ -81,7 +73,7 @@
 	</div>	
 	<div class="row">
 	<div class="col-sm-12 col-md-12 col-lg-12">	
-		<h4>Clarity</h4>
+		<h4 class ="options">Clarity</h4>
 		<input type="checkbox" name="clarity" value="clear"> Clear
 		<input type="checkbox" name="clarity" value="cloudy"> Cloudy
 		<input type="checkbox" name="clarity" value="hazy"> Hazy
@@ -91,7 +83,7 @@
 
 	<div class="row">
 	<div class="col-sm-12 col-md-12 col-lg-12">	
-		<h4>Color</h4>
+		<h4 class ="options">Color</h4>
 		<input type="checkbox" name="beerColor" value="straw"> Straw
 		<input type="checkbox" name="beerColor" value="yellow"> Yellow
 		<input type="checkbox" name="beerColor" value="gold"> Gold
@@ -113,7 +105,7 @@
 
 	<div class="row">
 	<div class="col-sm-12 col-md-12 col-lg-12">		
-		<h4>Malt Flavor</h4>
+		<h4 class ="options">Malt Flavor</h4>
 		<input type="checkbox" name="flavorMalt" value="sweet"> Sweet
 		<input type="checkbox" name="flavorMalt" value="grainy"> Grainy
 		<input type="checkbox" name="flavorMalt" value="toasty"> Toasty
@@ -128,7 +120,7 @@
 
 	<div class="row">
 	<div class="col-sm-12 col-md-12 col-lg-12">	
-		<h4>Hops Flavor</h4>
+		<h4 class ="options">Hops Flavor</h4>
 		<input type="checkbox" name="flavorHops" value="peppery"> Peppery
 		<input type="checkbox" name="flavorHops" value="citrus"> Citrus
 		<input type="checkbox" name="flavorHops" value="floral"> Floral
@@ -143,15 +135,39 @@
 
 	<div class="row">
 	<div class="col-sm-12 col-md-12 col-lg-12">	
-		<h4>Bonus Points</h4>
-		Guess IBU <input type="text" id="ibuBonusPoints" >
-		Guess ABV <input type="text" id="abvBonusPoints" >
+		<h4 class ="options">Bonus Points</h4>
+		Guess IBU <input class="textinput" type="text" id="ibuBonusPoints" >
+		Guess ABV <input class="textinput" type="text" id="abvBonusPoints" >
 		<button><input type="submit" id="reviewSubmitButton"></button>
 		</form>
 	</div>
 	</div>
 
-		
+	<footer class="page-footer
+            center-on-small-only">
+
+ 
+    <div class=“container-fluid”>
+        <div class=“row”>
+
+           <div class="col-md-12">
+                <h3 class=“title”>©Yeastie Bois</h3>
+            </div>
+         </div>
+         <div class=“row”>
+             <div class=“col-md-12”>
+
+               <h6 class=“ourNames”>Powered By: Andrew, Tyler, Jesus, Steve</h6>
+            </div>
+         </div>  
+            
+   </div>
+  
+    
+
+  
+
+</footer>	
 	</div>
 	<script type="text/javascript" src="js/submitForm.js"></script>
 </body>

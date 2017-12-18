@@ -1,31 +1,32 @@
-.page-header{ 
-	background-color:#0071b2;
+.jumbotron{ 
+	background-color:#fae7bc;
+	/*background-image: url("https://static.vinepair.com/wp-content/uploads/2015/04/hops-header.jpg");*/
+	/*background-size: cover;*/
 	border-radius: 25px;
+	
 }
-h1{
+#yeast{
 	padding-top: 18px;
 	text-align: center;
-	font-size:55px;
-	color:#FFC049;
-	font-family: "arcade interlaced";
-}
-body{
-	background-color:#FFC049;
-}
-
-body{
+	font-size:80px;
 	color:#c63c22;
-	font-family:"arcade interlaced";
-	border:4px solid #c63c22;
-	
-
+	font-family: 'Monoton', cursive;
 }
-/*.border-top-0{
-	color:red;
 
-}*/
-h4{
-	color:#0071b2;
+
+body{
+	text-align: center;
+	background-color:#c63c22;
+	color:#fae7bc;
+	font-family: 'VT323', monospace;
+	font-size:2em;
+	background-image: url("https://ak7.picdn.net/shutterstock/videos/14391367/thumb/1.jpg") no-repeat center center;
+	background-size: cover;
+}
+
+.options{
+	color:#fae7bc;
+	font-size:2em;
 }
 
 #logo{
@@ -34,23 +35,40 @@ h4{
 }
 
 .row{
-	border:1px dashed #c63c22 ;
+	
 	margin:8px;
 }
 
 h3{
-	color:#FFC049;
+	color:#c63c22;
 	text-align: center;
+	font-size:2em;
+	font-family: 'Monoton', cursive;
 }
 
 #aroma{
-	background-color: #c63c22;
+	background-color: #fae7bc;
+
+
 }
 
 #appearance{
-	background-color: #c63c22;
+	background-color: #fae7bc;
 }
 
 #flavor{
-	background-color: #c63c22;
+	background-color: #fae7bc;
+}
+#reviewSubmitButton{
+	color:black;
+}
+.textinput{
+	color:black;
+}
+.page-footer{
+    margin-top: 20px;
+    background-color: #fae7bc ;
+    color: #c63c22 ;
+    border-radius: 10px;
+    font-family: ‘Press Start 2P’, cursive;
 }
