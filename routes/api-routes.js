@@ -104,7 +104,6 @@ module.exports = function(app) {
 	// 			Login Route
 	// ==============================================
 	app.get("/login", function(req, res) {
-		console.log(req);
 		var username = req.query.username;
 		var password = req.query.password;
 		db.Login.findAll({
