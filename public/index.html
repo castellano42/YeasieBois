@@ -35,6 +35,9 @@
 	</div>
 	</div>
 
+	<form name="beerReviewForm">
+		<h3>Beer Name:</h3>
+		  <select id="allBeerList" name="beerName"></select>
 
 	<div class="row">
 	<div class="col-sm-12 col-md-12 col-lg-12">	
@@ -65,7 +68,7 @@
 	</div>
 	</div>
 
-
+    
 	<div class="row" id="appearance">
 	<div class="col-sm-12 col-md-12 col-lg-12">	
 		<h3>Appearance</h3>
@@ -135,11 +138,19 @@
 
 	<div class="row">
 	<div class="col-sm-12 col-md-12 col-lg-12">	
-		<h4 class ="options">Bonus Points</h4>
-		Guess IBU <input class="textinput" type="text" id="ibuBonusPoints" >
-		Guess ABV <input class="textinput" type="text" id="abvBonusPoints" >
+
+		Guess IBU<input type="text" id="ibuBonusPoints" >
+		Guess ABV<input type="text" id="abvBonusPoints" >
+
+		<h4>Personal Opinion</h4>
+		<p> Rating (1-10):<input type="text" id="rating"></p>
+		<p>Comments: <input type="text" id="comments"></p>
+
 		<button><input type="submit" id="reviewSubmitButton"></button>
-		</form>
+	</form>
+	
+	<!-- Submission Form JS -->
+
 	</div>
 	</div>
 
@@ -168,6 +179,18 @@
   
 
 </footer>	
+	</div>
+
+	<script type="text/javascript" src="js/submitForm.js"></script>
+
+	<!-- Grade Submission JS -->
+	<script type="text/javascript" src="js/compareAnswers.js"></script>
+
+	<!-- List All Beers -->
+	<script type="text/javascript" src="js/listAllBeers.js"></script>
+
+
+		
 	</div>
 	<script type="text/javascript" src="js/submitForm.js"></script>
 </body>
