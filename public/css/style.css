@@ -138,3 +138,89 @@ h3{
     border-radius: 10px;
     font-family: ‘Press Start 2P’, cursive;
 }
+#tips{
+	color:black;
+}
+
+#tips:hover{
+	background-color: #c63c22;
+}
+/*html {
+  background: radial-gradient(#246, #002);
+  height: 100%;
+}*/
+
+.popup{
+	margin-top: 10px;
+	margin-bottom: 0;
+	border-radius: 8px;
+}
+p{
+ visibility:hidden;
+ background-color:#fae7bc;
+ color:#c63c22;
+}
+button:hover + p {
+  visibility:visible;
+}
+
+ 
+
+  span.ibu {
+  height: 0;
+  color: #fff;
+  position: relative;
+  cursor: pointer;
+}
+ 
+ span.ibu:after {
+ 	color:#c63c22;
+    content: attr(data-ibutext);
+    background-color:#fae7bc;
+    border-radius: 3px;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    position: absolute;
+    transition: 500ms ease;
+    
+    
+  }
+  
+ span.ibu:hover:after {
+    opacity: 1;
+    top: 1.2em;
+    max-height: 200px;
+    padding: .4em;
+  }
+    span.abv {
+  height: 0;
+  color: #fff;
+  position: relative;
+  cursor: pointer;
+  width: 100px;
+}
+ 
+ span.abv:after {
+ 	color:#c63c22;
+    content: attr(data-abvtext);
+    background-color:#fae7bc;
+    border-radius: 3px;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    position: absolute;
+    transition: 500ms ease;
+    width: 100px;
+    
+    
+  }
+  
+ span.abv:hover:after {
+    opacity: 1;
+    top: 1.2em;
+    max-height: 200px;
+    padding: .4em;
+    width: 100px;
+  }
+}
