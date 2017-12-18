@@ -36,26 +36,34 @@ $("#reviewSubmitButton").on("click", function(){
 	var comments = $("#comments").val();
 	var ibuValue = $("#ibuBonusPoints").val();
 	var abvValue = $("#abvBonusPoints").val();
+	var beerAnswer = {};
 
-
+	var userId;
+	$.get("/getid").then(function(response){
+		userId = response.userId;
 	
-	//!!!!!!!!! Add user Id !!!!!!!!!!!!!!!!!!!!
-	fullUserBeerReview = {
-		Beer_Name: beerName,
-		Brewery: brewery,
-		Aroma_Malt: aromaMaltValues,
-		Aroma_Hops: aromaHopsValues,
-		Appearance_Clarity: clarityValues,
-		Appearance_Color: beerColorValues,
-		Flavor_Malt: flavorMaltValues,
-		Flavor_Hops: flavorHopsValues,
-		IBU: ibuValue,
-		ABV: abvValue,
-		Rating: rating,
-		Comments: comments
-	};
-	console.log(JSON.stringify(fullUserBeerReview, null, 2));
+		fullUserBeerReview = {
+			UserId: userId,
+			Beer_Name: beerName,
+			Brewery: brewery,
+			Aroma_Malt: aromaMaltValues,
+			Aroma_Hops: aromaHopsValues,
+			Appearance_Clarity: clarityValues,
+			Appearance_Color: beerColorValues,
+			Flavor_Malt: flavorMaltValues,
+			Flavor_Hops: flavorHopsValues,
+			IBU: ibuValue,
+			ABV: abvValue,
+			Rating: rating,
+			Comments: comments
+		};
+		console.log(JSON.stringify(fullUserBeerReview, null, 2));
+		var getBeerQuery = "/api/beersName/" + fullUserBeerReview.Beer_Name;
 
+		$.get(getBeerQuery).then(function(getBeerResp){
+			beerAnswer = getBeerResp[0];
+		});
+	});
 	
 });
 

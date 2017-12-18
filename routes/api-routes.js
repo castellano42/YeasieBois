@@ -14,7 +14,7 @@ module.exports = function(app) {
 		});
 	});
 
-	app.get("/api/beers/:id", function(req, res) {
+	app.get("/api/beersId/:id", function(req, res) {
 		db.Beer.findAll({
 			where: {
 				id: req.params.id
@@ -24,17 +24,20 @@ module.exports = function(app) {
 		});
 	});
 
-	app.get("/api/beers/:Beer_Name", function(req, res) {
+	app.get("/api/beersName/:Beer_Name", function(req, res) {
+		console.log("BEER NAME!!!!!!!!!!!!!!");
+		console.log(req.params.Beer_Name);
 		db.Beer.findAll({
 			where: {
 				Beer_Name: req.params.Beer_Name
 			}
 		}).then(function(dbBeer) {
+			console.log(dbBeer);
 			res.json(dbBeer);
 		});
 	});
 
-	app.get("/api/beers/:Brewery", function(req, res) {
+	app.get("/api/beersBrewery/:Brewery", function(req, res) {
 		db.Beer.findAll({
 			where: {
 				Brewery: req.params.Brewery
@@ -44,7 +47,7 @@ module.exports = function(app) {
 		});
 	});
 
-	app.get("/api/beers/:Style", function(req, res) {
+	app.get("/api/beersStyle/:Style", function(req, res) {
 		db.Beer.findAll({
 			where: {
 				Style: req.params.Style
@@ -177,6 +180,31 @@ module.exports = function(app) {
 			}
 			if(userCookie === result[0].dataValues.AuthToken){
 				res.send(true);
+			}else{
+				console.log("triggering else statement");
+				res.redirect("/fake");
+			};
+		});
+	});
+
+
+	// ==============================================
+	// 			Get User Id
+	// ==============================================
+		app.get("/getid", function(req, res) {
+		console.log("/getid called");
+		var userCookie = req.cookies.authToken;
+		db.Login.findAll({
+			where: {
+				AuthToken: userCookie
+			}
+		}).then(function(result) {
+			var userId = result[0].dataValues.id;
+			if(result[0] === undefined){
+				res.redirect("/fake");
+			}
+			if(userCookie === result[0].dataValues.AuthToken){
+				res.json({userId: userId});
 			}else{
 				console.log("triggering else statement");
 				res.redirect("/fake");

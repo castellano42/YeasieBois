@@ -4,7 +4,6 @@
 // -If authToken doesn't match the cookie, redirect to login page
 
 function checkLogin(){
-	alert("Checking Login Status");
 	$.get("/authMatch").then(function(result){
 		console.log(result);
 	});
