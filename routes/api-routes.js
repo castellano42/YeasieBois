@@ -101,6 +101,7 @@ module.exports = function(app) {
 	// 			Login Route
 	// ==============================================
 	app.get("/login", function(req, res) {
+		console.log(req);
 		var username = req.query.username;
 		var password = req.query.password;
 		db.Login.findAll({
@@ -160,4 +161,40 @@ module.exports = function(app) {
 		})
 	});
 
+	// ==============================================
+	// 			Get Cookie
+	// ==============================================
+		app.get("/authMatch", function(req, res) {
+		var userId = req.query.username;
+		var userCookie = req.cookies.authToken;
+		db.Login.findAll({
+			where: {
+				AuthToken: userCookie
+			}
+		}).then(function(result) {
+			if(result[0] === undefined){
+				res.redirect("/fake");
+			}
+			if(userCookie === result[0].dataValues.AuthToken){
+				res.send(true);
+			}else{
+				console.log("triggering else statement");
+				res.redirect("/fake");
+			};
+		});
+	});
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,35 +1,13 @@
-// ======================================
-// 			Login Submit
-// ======================================
-// $("#submitLoginInfo").on("click", function(){
-// 	event.preventDefault();
-// 	var loginCredentials = {
-// 		username: $("#username").val(),
-// 		password: $("#password").val()
-// 	};
-// 	console.log("Pre Ajax: " + JSON.stringify(loginCredentials));
-// 	//make a get request with the route "/login"
-// 	//perform comparison logic on the back end in the routes to see if the user matches db info
-// 	$.get("/login", loginCredentials);
-// });
+// -Send a get request to "/authMatch" to retrieve authToken
+// 	from the db by the user ID.
+// -Check to see if authToken matches
+// -If authToken doesn't match the cookie, redirect to login page
 
+function checkLogin(){
+	alert("Checking Login Status");
+	$.get("/authMatch").then(function(result){
+		console.log(result);
+	});
+};
 
-// ======================================
-// 			Sign Up Submit
-// ======================================
-// $("#signUpSubmit").on("click", function(){
-// 	event.preventDefault();
-// 	var newUser = {
-// 		username: $("#signUpUser")val(),
-// 		password: $("#")val(),
-// 		email: $("#signUpEmail")val(),
-// 	};
-
-// });
-
-
-// -Shouldn't actually need these on click functions if we are 
-// 	calling actions in the form
-// -The action will be set to a post route that can also generate a token and 
-// 	post that token to the database with the user info
-// -create cookie as follows   document.cookie = "username=token";
+checkLogin();
