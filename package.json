@@ -17,8 +17,11 @@
   },
   "homepage": "https://github.com/castellano42/YeasieBois#readme",
   "dependencies": {
+    "cookie-parser": "^1.4.3",
+    "cookies": "^0.7.1",
     "express": "^4.16.2",
     "mysql2": "^1.5.1",
+    "rand-token": "^0.4.0",
     "sequelize": "^4.28.1"
   }
 }
