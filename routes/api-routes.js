@@ -81,6 +81,7 @@ module.exports = function(app) {
 		});
 	});
 
+
 	// ==============================================
 	// 			Add Auth Token to User ID --- Probably Not Necessary
 	// ==============================================
@@ -136,7 +137,11 @@ module.exports = function(app) {
 				res.send("Sorry there was an error logging in.");
 			}
 		});
-	});
+		}).then(function(dbBeer) {
+			res.json(dbBeer)
+		});
+ 
+	};
 
 	// ==============================================
 	// 			Sign Up Route

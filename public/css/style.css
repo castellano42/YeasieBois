@@ -1,3 +1,4 @@
+
 .jumbotron{ 
 	background-color:#fae7bc;
 	/*background-image: url("https://static.vinepair.com/wp-content/uploads/2015/04/hops-header.jpg");*/
@@ -14,6 +15,50 @@
 }
 
 
+
+.userlogin{
+	color: #FF9C00;
+	font-family: 'VT323', monospace;
+}
+
+.display-3{
+
+font-family: 'Monoton', cursive;
+
+}
+.fields{
+	font-family: 'Monoton', cursive;
+}
+
+p{
+	font-family: 'VT323', monospace;
+}
+
+.lead{
+	font-family: 'Press Start 2P', cursive;
+}
+
+
+h1{
+	padding-top: 18px;
+	text-align: center;
+	font-size:55px;
+	color:#FFC049;
+	font-family: "arcade interlaced";
+}
+
+
+
+h2{
+	font-family: 'Monoton', cursive;
+	color: #fae7bc;
+}
+
+h4{
+	font-family: 'Press Start 2P', cursive;
+}
+
+
 body{
 	text-align: center;
 	background-color:#c63c22;
@@ -24,20 +69,41 @@ body{
 	background-size: cover;
 }
 
+
 .options{
 	color:#fae7bc;
 	font-size:2em;
 }
 
+.page-footer{
+	margin-top: 20px;
+	background-color: #fae7bc;
+	color: #c63c22;
+	border-radius: 10px;
+	font-family: 'Monoton', cursive;
+}
+.title{
+	color: #c63c22;
+	
+}
+
+
+.submitLoginInfo{
+
+	font-family: 'VT323', monospace;
+
+}
 #logo{
 	height:150px;
 	width:150px;
 }
 
+
 .row{
 	
 	margin:8px;
 }
+
 
 h3{
 	color:#c63c22;

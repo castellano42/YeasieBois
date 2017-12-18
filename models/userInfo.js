@@ -24,5 +24,11 @@ module.exports = function(sequelize, DataTypes) {
 	},{
 		timestamps: false
 	});
+
+	// LoginInfo.associate = function(models) {
+	// 	LoginInfo.hasMany(models.userSubmission, {
+	// 		onDelete: "cascade"
+	// 	});
+	// };
 	return LoginInfo;
-}
+};
