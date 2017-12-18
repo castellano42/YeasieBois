@@ -119,10 +119,11 @@ module.exports = function(app) {
 			
 			} else {
 				res.send("Sorry there was an error logging in.");
-			};
+
+			}
 		});
-		
- 
+		}) 
+
 	
 
 	// ==============================================
@@ -147,6 +148,5 @@ module.exports = function(app) {
 		})
 	});
 
-});
 };	
 
