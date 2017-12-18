@@ -74,7 +74,9 @@ module.exports = function(app) {
 
 			}
 
-		});
+		}).then(function(dbBeer) {
+			res.json(dbBeer)
+		})
 	});
 
 };

@@ -3,27 +3,108 @@
 <head>
 	<title>Yeastie Bois Login</title>
 
-	<!-- JQuery -->
+	<!-- ******JQuery******* -->
 	<script
   	src="https://code.jquery.com/jquery-3.2.1.min.js"
   	integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
   	crossorigin="anonymous"></script>
+  	<!-- *******BootStrap****** -->
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<!-- ***********Stylesheet********** -->
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<!-- **********Font************** -->
+	<link href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet">
+	<!-- ***********Font for regular text************ -->
+	<link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+	<!-- **********Moar Font************* -->
+	<link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
+	
 </head>
 <body>
-	<form action=""> <!-- Compare credentials with database -->
-		<h1>Login</h1>
-		<p>Username: <input type="text" name="username" id="username"></p>
-		<p>Password: <input type="password" name="password" id="password"></p>
-		<input type="submit" name="submitLoginInfo" id="submitLoginInfo">
-	</form>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12 col-md-12 col-lg-12">
+				<div class="jumbotron">
+  					<h1 class="display-3">YEASTIE BOIS	<img src="./images/beerlogo.png" id="logo"></h1>
+					  <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+					  
+				</div>
+			</div>	
+		</div>	
 
-	<form action=""> <!-- Insert credentials into userInfo table -->
-		<h1>Sign Up</h1>
-		<p>Email Address: <input type="text" name="signUpEmail" id="signUpEmail"></p>
-		<p>Username: <input type="text" name="signUpUser" id="signUpUser"></p>
-		<p>Enter Password: <input type="password" name="signUpPass" id="signUpPass"></p>
-		<input type="submit" name="signUpSubmit" id="signUpSubmit">
-	</form>
+		<div class="row">
+			<div class="col-sm-6 col-md-6 col-lg-6">
+				
+				<form action="/login" method="GET"> <!-- Compare credentials with database -->
+					<p class="userlogin"><h2>User Login</h2></p>
+					<p class="fields"><h4>Username: </h4><input type="text" name="username" id="username"></p>
+					<p class="fields"><h4>Password: </h4><input type="password" name="password" id="password"></p>
+					<input type="submit" name="submitLoginInfo" id="submitLoginInfo">
+				</form>
+			</div>
+	
+
+		
+			<div class="col-sm-6 col-md-6 col-lg-6">
+
+				<form action="/newuser" method="POST"> <!-- Insert credentials into userInfo table -->
+					<p class="userlogin">
+						<h2>New User</h2>
+					</p>
+		
+				<div class="col align-self-center">		
+					<p class="fields"><h4>Email Address:</h4> <input type="text" name="signUpEmail" id="signUpEmail"></p>
+				</div>		
+				<div class="col align-self-center">
+
+					<p class="fields"><h4>Username: </h4><input type="text" name="signUpUser" id="signUpUser"></p>
+				</div>
+				<div class="col align-self-center">	
+					<p class="fields"><h4>Enter Password: </h4><input type="password" name="signUpPass" id="signUpPass"></p>
+				</div>
+			
+			
+				<div clas="col align-self-end">	
+					<input type="submit" name="signUpSubmit" id="signUpSubmit">
+				</div>
+
+				
+					
+				</form>
+			</div>
+		</div>	
+
+
+
+<footer class="page-footer
+			center-on-small-only">
+
+   
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-md-12">
+                <h3 class="title">©Yeastie Bois</h3>
+            </div>
+         </div>
+         <div class="row">
+         	<div class="col-md-12">
+
+                <h6 class="ourNames">Powered By: Andrew, Tyler, Jesus, Steve</h6>
+            </div>
+         </div>   
+            
+    </div>
+   
+    
+
+   
+
+</footer>
+		</div>
+
+
+
 
 	<script type="text/javascript" src="./js/login.js"></script>
 </body>

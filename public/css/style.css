@@ -1,7 +1,40 @@
 .page-header{ 
 	background-color:#0071b2;
-	border-radius: 25px;
+	border-radius: 45px;
 }
+
+.jumbotron{
+	padding-top: 20px;
+	background-color:#fae7bc;
+	border-radius: 50px;
+	color: #c63c22 ;
+	;
+
+
+}
+.userlogin{
+	color: #FF9C00;
+	font-family: 'VT323', monospace;
+}
+
+.display-3{
+
+font-family: 'Monoton', cursive;
+
+}
+.fields{
+	font-family: 'Monoton', cursive;
+}
+
+p{
+	font-family: 'VT323', monospace;
+}
+
+.lead{
+	font-family: 'Press Start 2P', cursive;
+}
+
+
 h1{
 	padding-top: 18px;
 	text-align: center;
@@ -9,10 +42,19 @@ h1{
 	color:#FFC049;
 	font-family: "arcade interlaced";
 }
+
 body{
-	background-color:#FFC049;
+	background-color:#c63c22;
 }
 
+h2{
+	font-family: 'Monoton', cursive;
+	color: #fae7bc;
+}
+
+h4{
+	font-family: 'Press Start 2P', cursive;
+}
 body{
 	color:#c63c22;
 	font-family:"arcade interlaced";
@@ -24,18 +66,36 @@ body{
 	color:red;
 
 }*/
-h4{
-	color:#0071b2;
+.page-footer{
+	margin-top: 20px;
+	background-color: #fae7bc;
+	color: #c63c22;
+	border-radius: 10px;
+	font-family: 'Monoton', cursive;
+}
+.title{
+	color: #c63c22;
+	
 }
 
+h4{
+	color:#fae7bc;
+	font-family: 'VT323', monospace;
+}
+.submitLoginInfo{
+
+	font-family: 'VT323', monospace;
+
+}
 #logo{
 	height:150px;
 	width:150px;
 }
 
-.row{
-	border:1px dashed #c63c22 ;
-	margin:8px;
+.ourNames {
+
+	font-family: 'Press Start 2P', cursive;
+	text-align: center;
 }
 
 h3{
