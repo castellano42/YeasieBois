@@ -166,8 +166,11 @@ $("#reviewSubmitButton").on("click", function(){
 			// console.log(JSON.stringify(beerAnswer, null, 2));
 			compareAnswers(fullUserBeerReview, beerAnswer);
 			console.log("YOU EARNED " + userPoints + " POINTS!");
+			var quizPoints = userPoints;
 			userPoints = userPoints + currentScore;
 			var putQuery = "/updatescore/" + userPoints;
+			alert("You earned " + quizPoints + " points!");
+			alert("Your total is now " + userPoints + "!");
 		 
 		 	//===========================
 			 $.ajax({
@@ -183,6 +186,8 @@ $("#reviewSubmitButton").on("click", function(){
 		
 
 		});
+
+	$("#formToReset").trigger("reset");
 
 
 });

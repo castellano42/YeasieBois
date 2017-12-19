@@ -6,6 +6,10 @@
 	border-radius: 25px;
 	
 }
+
+.beername{
+	color: #fae7bc;
+}
 #yeast{
 	padding-top: 18px;
 	text-align: center;
@@ -14,9 +18,17 @@
 	font-family: 'Monoton', cursive;
 }
 
-	
+#ibuBonusPoints{
+	color: #c63c22;
+}
 
+#abvBonusPoints{
+	color: #c63c22;
+}	
 
+#allBeerList{
+	color: #c63c22;
+}
 
 .userlogin{
 	color: #FF9C00;
@@ -119,16 +131,20 @@ h3{
 
 #aroma{
 	background-color: #fae7bc;
+	border-radius: 8px;
+
 
 
 }
 
 #appearance{
 	background-color: #fae7bc;
+	border-radius: 8px;
 }
 
 #flavor{
 	background-color: #fae7bc;
+	border-radius: 8px;
 }
 #reviewSubmitButton{
 	color:black;
