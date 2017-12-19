@@ -183,7 +183,7 @@ module.exports = function(app) {
 				res.send(true);
 			}else{
 				console.log("triggering else statement");
-				res.redirect("/");
+				res.redirect("/BeerQuiz");
 			};
 		});
 	});
