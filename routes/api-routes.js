@@ -202,13 +202,13 @@ module.exports = function(app) {
 		}).then(function(result) {
 			var userId = result[0].dataValues.id;
 			if(result[0] === undefined){
-				res.redirect("/fake");
+				res.redirect("/");
 			}
 			if(userCookie === result[0].dataValues.AuthToken){
 				res.json({userId: userId});
 			}else{
 				console.log("triggering else statement");
-				res.redirect("/fake");
+				res.redirect("/");
 			};
 		});
 	});
