@@ -177,13 +177,13 @@ module.exports = function(app) {
 			}
 		}).then(function(result) {
 			if(result[0] === undefined){
-				res.redirect("/fake");
+				res.redirect("/");
 			}
 			if(userCookie === result[0].dataValues.AuthToken){
 				res.send(true);
 			}else{
 				console.log("triggering else statement");
-				res.redirect("/fake");
+				res.redirect("/");
 			};
 		});
 	});
