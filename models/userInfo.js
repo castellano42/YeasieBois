@@ -25,10 +25,10 @@ module.exports = function(sequelize, DataTypes) {
 		timestamps: false
 	});
 
-	// LoginInfo.associate = function(models) {
-	// 	LoginInfo.hasMany(models.userSubmission, {
-	// 		onDelete: "cascade"
-	// 	});
-	// };
+	LoginInfo.associate = function(models) {
+		LoginInfo.hasMany(models.FullUserBeerReview, {
+			onDelete: "cascade"
+		});
+	};
 	return LoginInfo;
 };
