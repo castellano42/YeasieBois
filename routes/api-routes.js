@@ -27,14 +27,14 @@ module.exports = function(app) {
 	});
 
 	app.get("/api/beersName/:Beer_Name", function(req, res) {
-		console.log("BEER NAME!!!!!!!!!!!!!!");
-		console.log(req.params.Beer_Name);
+		// console.log("BEER NAME!!!!!!!!!!!!!!");
+		// console.log(req.params.Beer_Name);
 		db.Beer.findAll({
 			where: {
 				Beer_Name: req.params.Beer_Name
 			}
 		}).then(function(dbBeer) {
-			console.log(dbBeer);
+			// console.log(dbBeer);
 			res.json(dbBeer);
 		});
 	});
@@ -100,9 +100,9 @@ module.exports = function(app) {
 				if(password === loginCredentials[0].Password){
 					var token = randToken.generate(16);
 					var userId = loginCredentials[0].id;
-					console.log("User Id " + userId);
+					// console.log("User Id " + userId);
 					var putQuery = "authToken/" + userId;
-					console.log(token);
+					// console.log(token);
 					 
 					// ========= Add authToken to user info in DB ========
 					db.Login.update({
@@ -133,14 +133,14 @@ module.exports = function(app) {
 	// 			Sign Up Route
 	// ==============================================
 	app.post("/newuser", function(req, res) {
-		console.log(req);
+		// console.log(req);
 		var username = req.body.signUpUser;
 		var email = req.body.signUpEmail;
 		var password = req.body.signUpPass;
 
-		console.log(username);
-		console.log(email);
-		console.log(password);
+		// console.log(username);
+		// console.log(email);
+		// console.log(password);
 
 		db.Login.create({
 			Username: username,
@@ -169,7 +169,7 @@ module.exports = function(app) {
 			if(userCookie === result[0].dataValues.AuthToken){
 				res.send(true);
 			}else{
-				console.log("triggering else statement");
+				// console.log("triggering else statement");
 				res.redirect("/");
 			};
 		});
@@ -180,7 +180,7 @@ module.exports = function(app) {
 	// 			Get User Id
 	// ==============================================
 		app.get("/getid", function(req, res) {
-		console.log("/getid called");
+		// console.log("/getid called");
 		var userCookie = req.cookies.authToken;
 		db.Login.findAll({
 			where: {
@@ -192,11 +192,31 @@ module.exports = function(app) {
 				res.redirect("/");
 			}
 			if(userCookie === result[0].dataValues.AuthToken){
-				res.json({userId: userId});
+				res.json(result);
 			}else{
 				console.log("triggering else statement");
 				res.redirect("/");
 			};
+		});
+	});
+
+	// ==============================================
+	// 			Update Score
+	// ==============================================
+		app.put("/updatescore/:userPoints", function(req, res) {
+		var userNewPoints = req.params.userPoints;
+
+		console.log("User Points: ");
+		console.log(req.params.userPoints);
+		db.Login.update( 
+			
+			{UserScore: req.params.userPoints},
+			
+			{where: {
+				AuthToken: req.cookies.authToken
+			}
+		}).then(function(result){
+			res.end();
 		});
 	});
 };

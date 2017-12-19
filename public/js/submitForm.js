@@ -19,22 +19,17 @@ function checkAnswer(a, b){
 	for(i = 0; i < b.length; i++){
 		b[i] = b[i].toLowerCase().trim();
 	};
-
-	//lowercase everything in b first
-	// for(i = 0; i < b.length; i++){
-	// 	b[i] = b[i].toLowerCase();
-	// };
-	console.log(b);
+	// console.log(b);
 
 	//compare answers for a and b with matching key names
 	for(i = 0; i < a.length; i ++){
 
 		if(b.indexOf(a[i]) > -1){
 			userPoints = userPoints + 2;
-			console.log("+2 POINTS!")
+			// console.log("+2 POINTS!")
 		} else if (b.indexOf(a[i]) <= -1){
 			userPoints = userPoints - 1;
-			console.log("-1 Point :(");
+			// console.log("-1 Point :(");
 		}
 	}
 };
@@ -55,12 +50,13 @@ function gradeIBU(a, b){
 	if(bonusPoints < 0){
 		bonusPoints = 0;
 	}
-	console.log("Bonus Points: " + typeof bonusPoints)
+	// console.log("Bonus Points: " + typeof bonusPoints);
 	userPoints = userPoints + bonusPoints;
+	console.log("You earned " + bonusPoints + " bonus points for IBU!");
 };
 
 function gradeABV(a, b){
-	console.log("a: " + a + " b: " + b);
+	// console.log("a: " + a + " b: " + b);
 	var userABV = parseFloat(a);
 	var answerABV = parseFloat(b);
 	var difference = userABV - answerABV;
@@ -81,8 +77,7 @@ function gradeABV(a, b){
 		console.log("Meh, ABV was kinda close.  1 Bonus Point!");
 	}
 
-	console.log("YOU EARNED " + userPoints + " POINTS!");
-	
+
 };
 
 
@@ -142,7 +137,10 @@ $("#reviewSubmitButton").on("click", function(){
 
 	var userId;
 	$.get("/getid").then(function(response){
-		userId = response.userId;
+		console.log(response);
+		userId = response[0].id;
+		var currentScore = parseInt(response[0].UserScore);
+
 	
 		fullUserBeerReview = {
 			UserId: userId,
@@ -159,18 +157,36 @@ $("#reviewSubmitButton").on("click", function(){
 			Rating: rating,
 			Comments: comments
 		};
-		console.log(JSON.stringify(fullUserBeerReview, null, 2));
+		// console.log(JSON.stringify(fullUserBeerReview, null, 2));
 		
 		var getBeerQuery = "/api/beersName/" + fullUserBeerReview.Beer_Name;
 
 		$.get(getBeerQuery).then(function(getBeerResp){
 			beerAnswer = getBeerResp[0];
-			console.log(JSON.stringify(beerAnswer, null, 2));
+			// console.log(JSON.stringify(beerAnswer, null, 2));
 			compareAnswers(fullUserBeerReview, beerAnswer);
+			console.log("YOU EARNED " + userPoints + " POINTS!");
+			userPoints = userPoints + currentScore;
+			var putQuery = "/updatescore/" + userPoints;
+		 
+		 	//===========================
+			 $.ajax({
+	      		url: putQuery,
+	     		 method: "PUT"
+	    	}).done(function(response){
+	    		// window.location.reload();
+	    	});
+	    	//============================
 		});
-	});
-	
+
+		
+		
+
+		});
+
+
 });
+	
 
 
 
