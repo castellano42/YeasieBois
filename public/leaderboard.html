@@ -3,12 +3,11 @@
 <head>
     <title>
     </title>
-    <script>
+
  
 	 <link rel="stylesheet" type="text/css" href="css/style.css">
 	 <link href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet">
 	 <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
-	<script src="js/leaderboard.js"></script>
 	<script
   	src="https://code.jquery.com/jquery-3.2.1.min.js"
   	integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
@@ -26,13 +25,61 @@
 	 	
 	 	<div class="row">
 	 		<div class="col-sm-12 col-md-12 col-lg-12">
-	 			<div class="leaderboard">
+	 			<div id="leaderboard">
 	 				<h2> Leaderboard </h2>
+
 	 				
 	 			</div>
 	 		</div>
 	 	</div>			 			
 	</div>
+<script type="text/javascript">
+var leaderboardArray = [];
+var sel = document.getElementById('leaderboard');
+	
 
+$.get("/api/users", function(data) {
+	for(i=0; i<data.length; i++){
+
+	
+			var object = {
+				Username: data.Username,
+				Userscore: data.Userscore
+			};
+		leaderboardArray.push(object);
+	}
+	leaderboardArray.
+
+	for(i=0; i<leaderboardArray.length; i++){
+		var div = document.createElement("div");
+		div.innerHTML(leaderboardArray[i].Username + " " + leaderboardArray[i].Userscore);
+		$(".leaderboard").appendChild(div);
+	};
+			
+
+		// div.innerHTML = data[i].Username.trim();
+		// div.value = data[i].Username.trim();
+		// sel.appendChild(div);
+		// allUsers.push(data[i].Username.trim());
+		// correspondingScore.push(data[i].Userscore);
+
+
+	// .append("<h2> 'leaderboard' "
+	// 	data.Username,
+	// 	data.Userscore
+	// 	)
+	}
+});
+
+
+
+
+	// }).done(function(response) {
+	// 	$(.leaderboard).text(JSON.stringify(response));
+	// })
+
+
+
+</script>	
 </body>
 </html>

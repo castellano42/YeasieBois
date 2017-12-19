@@ -160,7 +160,7 @@ module.exports = function(app) {
 			Password: password,
 			Email: email
 		}).then(function(newUser){
-			res.redirect("/BeerQuiz");
+			res.redirect("/");
 		})
 	});
 
