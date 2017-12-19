@@ -14,6 +14,8 @@
 	font-family: 'Monoton', cursive;
 }
 
+	
+
 
 
 .userlogin{
@@ -28,15 +30,18 @@ font-family: 'Monoton', cursive;
 }
 .fields{
 	font-family: 'Monoton', cursive;
+
+}
+.login{
+	color:#c63c22;
+}
+.submitInfo{
+	color:#c63c22;
 }
 
-p{
-	font-family: 'VT323', monospace;
-}
 
-.lead{
-	font-family: 'Press Start 2P', cursive;
-}
+
+
 
 
 h1{
@@ -198,7 +203,7 @@ button:hover + p {
   color: #fff;
   position: relative;
   cursor: pointer;
-  width: 100px;
+  width: 175px;
 }
  
  span.abv:after {
@@ -211,7 +216,7 @@ button:hover + p {
     left: 0;
     position: absolute;
     transition: 500ms ease;
-    width: 100px;
+    width: 175px;
     
     
   }
@@ -221,6 +226,12 @@ button:hover + p {
     top: 1.2em;
     max-height: 200px;
     padding: .4em;
-    width: 100px;
+    width: 175px;
   }
+
+.lead{
+	font-family: 'Press Start 2P', cursive;
+	color:#c63c22;
+	visibility:visible;
 }
+

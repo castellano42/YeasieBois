@@ -26,8 +26,10 @@
 		<div class="row">
 			<div class="col-sm-12 col-md-12 col-lg-12">
 				<div class="jumbotron">
-  					<h1 class="display-3">YEASTIE BOIS	<img src="./images/beerlogo.png" id="logo"></h1>
-					  <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+  					<h1 id="yeast" class="display-3">YEASTIE BOIS	<img src="./images/beerlogo.png" id="logo"></h1>
+  				
+					  <span class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</span>
+
 					  
 				</div>
 			</div>	
@@ -38,9 +40,9 @@
 				
 				<form action="/login" method="GET"> <!-- Compare credentials with database -->
 					<p class="userlogin"><h2>User Login</h2></p>
-					<p class="fields"><h4>Username: </h4><input type="text" name="username" id="username"></p>
-					<p class="fields"><h4>Password: </h4><input type="password" name="password" id="password"></p>
-					<input type="submit" name="submitLoginInfo" id="submitLoginInfo">
+					<p class="fields"><h4>Username: </h4><input class="login" type="text" name="username" id="username"></p>
+					<p class="fields"><h4>Password: </h4><input class="login" type="password" name="password" id="password"></p>
+					<input class="submitInfo" type="submit" name="submitLoginInfo" id="submitLoginInfo">
 				</form>
 			</div>
 	
@@ -54,19 +56,19 @@
 					</p>
 		
 				<div class="col align-self-center">		
-					<p class="fields"><h4>Email Address:</h4> <input type="text" name="signUpEmail" id="signUpEmail"></p>
+					<p class="fields"><h4>Email Address:</h4> <input class="login" type="text" name="signUpEmail" id="signUpEmail"></p>
 				</div>		
 				<div class="col align-self-center">
 
-					<p class="fields"><h4>Username: </h4><input type="text" name="signUpUser" id="signUpUser"></p>
+					<p class="fields"><h4>Username: </h4><input class="login" type="text" name="signUpUser" id="signUpUser"></p>
 				</div>
 				<div class="col align-self-center">	
-					<p class="fields"><h4>Enter Password: </h4><input type="password" name="signUpPass" id="signUpPass"></p>
+					<p class="fields"><h4>Enter Password: </h4><input class="login" type="password" name="signUpPass" id="signUpPass"></p>
 				</div>
 			
 			
 				<div clas="col align-self-end">	
-					<input type="submit" name="signUpSubmit" id="signUpSubmit">
+					<input class="submitInfo" type="submit" name="signUpSubmit" id="signUpSubmit">
 				</div>
 
 				

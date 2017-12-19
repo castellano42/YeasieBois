@@ -34,7 +34,7 @@ module.exports = function(sequelize, DataTypes) {
 			allowNull: true
 		},
 		IBU: {
-			type: DataTypes.INTEGER,
+			type: DataTypes.DECIMAL(10, 2),
 			allowNull: true
 		},
 		ABV: {

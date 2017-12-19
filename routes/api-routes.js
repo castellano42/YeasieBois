@@ -16,6 +16,12 @@ module.exports = function(app) {
 		});
 	});
 
+	app.get("/api/users", function(req, res) {
+		db.Login.findAll({}).then(function(dbLogin) {
+			res.json(dbLogin);
+		});
+	});
+
 	app.get("/api/beersId/:id", function(req, res) {
 		db.Beer.findAll({
 			where: {
@@ -59,6 +65,13 @@ module.exports = function(app) {
 		});
 	});
 
+	app.post("/api/leaderboard", function(req, res) {
+		db.Login.findAll({
+			where: {
+
+			}
+		})
+	})
 	// ==============================================
 	// 			User Info Routes
 	// ==============================================
@@ -115,7 +128,7 @@ module.exports = function(app) {
 						}
 					});
 					res.cookie('authToken', token);
-					res.json(loginCredentials);
+					res.redirect("/BeerQuiz");
 				} else{
 					res.redirect("/BeerQuiz");
 				};
@@ -147,7 +160,7 @@ module.exports = function(app) {
 			Password: password,
 			Email: email
 		}).then(function(newUser){
-			res.json(newUser);
+			res.redirect("/BeerQuiz");
 		})
 	});
 
@@ -169,8 +182,10 @@ module.exports = function(app) {
 			if(userCookie === result[0].dataValues.AuthToken){
 				res.send(true);
 			}else{
-				// console.log("triggering else statement");
-				res.redirect("/");
+
+				//console.log("triggering else statement");
+				res.redirect("/BeerQuiz");
+
 			};
 		});
 	});
