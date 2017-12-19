@@ -17,9 +17,10 @@ module.exports = function(sequelize, DataTypes) {
 			allowNull: true
 		},
 		UserScore: {
-			type: DataTypes.INTEGER,
-			allowNull: true,
-			default: 0
+			type: DataTypes.INTEGER, 
+			defaultValue: 0,
+			allowNull: false
+			
 		}
 	},{
 		timestamps: false

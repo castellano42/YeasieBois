@@ -4,93 +4,110 @@ function loopReviewForm(questionFieldAnswers){
 	var newString = "";
 	var currentField = $("input[name='" + questionFieldAnswers + "']:checked");
 
+	// console.log(currentField);
+
 	currentField.each(function(){
 		newArray.push($(this).val());
 	});
-
-	for(i = 0; i < newArray.length; i ++){
-		newString = newString + " " + newArray[i];
-	}	
-	return newString;
+	
+	return newArray;
 }
 
-function gradeAnswers(userInput, answerK){
-	userInput = lowerCaseAndSplit(userInput);
-	console.log("Line 19: userInput: " + userInput);
-	answerK = lowerCaseAndSplit(answerK);
-	console.log("Line 21: answerK: " + answerK)
-	for(i = 0; i < userInput.length; i++){
-		console.log
-		if(answerK.indexOf(userInput[i]) > -1){
+
+function checkAnswer(a, b){
+	b = b.split(",");
+	for(i = 0; i < b.length; i++){
+		b[i] = b[i].toLowerCase().trim();
+	};
+	// console.log(b);
+
+	//compare answers for a and b with matching key names
+	for(i = 0; i < a.length; i ++){
+
+		if(b.indexOf(a[i]) > -1){
 			userPoints = userPoints + 2;
-			console.log("+2 Points!");
-		}else if (answerK.indexOf(userInput[i]) <= -1){
-			userPoints = userPoints -1;
-			console.log("-1 Point :(");
+			// console.log("+2 POINTS!")
+		} else if (b.indexOf(a[i]) <= -1){
+			userPoints = userPoints - 1;
+			// console.log("-1 Point :(");
 		}
 	}
 };
 
-function lowerCaseAndSplit(value){
-	for(i = 0; i < value.length; i++){
-		value[i] = value.toLowerCase();
+
+function gradeIBU(a, b){
+	var userIBU = parseInt(a);
+	var answerIBU = parseInt(b);
+	var possiblePoints = 5;
+	var difference = userIBU - answerIBU;
+
+	if(difference < 0){
+		difference = difference * -1;
 	}
-	value = value.trim().split(" ");
-	return value;
+
+	var bonusPoints = possiblePoints - difference;
+
+	if(bonusPoints < 0){
+		bonusPoints = 0;
+	}
+	// console.log("Bonus Points: " + typeof bonusPoints);
+	userPoints = userPoints + bonusPoints;
+	console.log("You earned " + bonusPoints + " bonus points for IBU!");
 };
+
+function gradeABV(a, b){
+	// console.log("a: " + a + " b: " + b);
+	var userABV = parseFloat(a);
+	var answerABV = parseFloat(b);
+	var difference = userABV - answerABV;
+	
+
+	if(difference < -1){
+		difference = difference * -1
+	}
+
+	if(difference === 0){
+		userPoints = userPoints + 5;
+		console.log("ABV correct!  5 BONUS POINTS!");
+	} else if(0 < difference < 0.5){
+		userPoints = userPoints + 3;
+		console.log("ABV REALLY CLOSE! 3 BONUS POINTS!")
+	} else if(0.5 < difference <= 1){
+		userPoints = userPoints + 1;
+		console.log("Meh, ABV was kinda close.  1 Bonus Point!");
+	}
+
+
+};
+
 
 function compareAnswers(userSubmission, answerKey){
 	// Aroma_Malt ======================================
-	console.log("Aroma Malt");
-	console.log(userSubmission.Aroma_Malt);
-	console.log("Answer");
-	gradeAnswers(userSubmission.Aroma_Malt, answerKey.Aroma_Malt);
-
+	checkAnswer(userSubmission.Aroma_Malt, answerKey.Aroma_Malt);
 
 	// // Aroma_Hops ======================================
-	// console.log("Aroma Hops");
-	// console.log(userSubmission.Aroma_Hops.trim().split(" "));
-	// console.log("Answer");
-	// console.log(answerKey.Aroma_Hops.trim().split(" "));
+	checkAnswer(userSubmission.Aroma_Hops, answerKey.Aroma_Hops);
 
 	// // Appearance_Clarity ======================================
-	// console.log("Appearance_Clarity");
-	// console.log(userSubmission.Appearance_Clarity.trim().split(" "));
-	// console.log("Answer");
-	// console.log(answerKey.Appearance_Clarity.trim().split(" "));
+	checkAnswer(userSubmission.Appearance_Clarity, answerKey.Appearance_Clarity);
 
 	// // Appearance_Color ======================================
-	// console.log("Appearance_Color");
-	// console.log(userSubmission.Appearance_Color.trim().split(" "));
-	// console.log("Answer");
-	// console.log(answerKey.Appearance_Color.trim().split(" "));
+	checkAnswer(userSubmission.Appearance_Color, answerKey.Appearance_Color);
 
 	// // Flavor_Malt ======================================
-	// console.log("Flavor_Malt");
-	// console.log(userSubmission.Flavor_Malt.trim().split(" "));
-	// console.log("Answer");
-	// console.log(answerKey.Flavor_Malt.trim().split(" "));
+	checkAnswer(userSubmission.Flavor_Malt, answerKey.Flavor_Malt);
 
 	// // Flavor_Hops ======================================
-	// console.log("Flavor_Hops");
-	// console.log(userSubmission.Flavor_Hops.trim().split(" "));
-	// console.log("Answer");
-	// console.log(answerKey.Flavor_Hops.trim().split(" "));
+	checkAnswer(userSubmission.Flavor_Hops, answerKey.Flavor_Hops);
 
 	// // IBU ======================================
-	// console.log("IBU");
-	// console.log(userSubmission.IBU.trim().split(" "));
-	// console.log("Answer");
-	// console.log(answerKey.IBU.trim().split(" "));
+	gradeIBU(userSubmission.IBU, answerKey.IBU);
 
 	// // ABV ======================================
-	// console.log("ABV");
-	// console.log(userSubmission.ABV.trim().split(" "));
-	// console.log("Answer");
-	// console.log(answerKey.ABV.trim().split(" "));
-			
-			
+	gradeABV(userSubmission.ABV, answerKey.ABV);	
+						
 };
+
 
 // =================================================
 // 			Global Variables
@@ -120,7 +137,10 @@ $("#reviewSubmitButton").on("click", function(){
 
 	var userId;
 	$.get("/getid").then(function(response){
-		userId = response.userId;
+		console.log(response);
+		userId = response[0].id;
+		var currentScore = parseInt(response[0].UserScore);
+
 	
 		fullUserBeerReview = {
 			UserId: userId,
@@ -137,16 +157,36 @@ $("#reviewSubmitButton").on("click", function(){
 			Rating: rating,
 			Comments: comments
 		};
-		console.log(JSON.stringify(fullUserBeerReview, null, 2));
+		// console.log(JSON.stringify(fullUserBeerReview, null, 2));
+		
 		var getBeerQuery = "/api/beersName/" + fullUserBeerReview.Beer_Name;
 
 		$.get(getBeerQuery).then(function(getBeerResp){
 			beerAnswer = getBeerResp[0];
+			// console.log(JSON.stringify(beerAnswer, null, 2));
 			compareAnswers(fullUserBeerReview, beerAnswer);
+			console.log("YOU EARNED " + userPoints + " POINTS!");
+			userPoints = userPoints + currentScore;
+			var putQuery = "/updatescore/" + userPoints;
+		 
+		 	//===========================
+			 $.ajax({
+	      		url: putQuery,
+	     		 method: "PUT"
+	    	}).done(function(response){
+	    		// window.location.reload();
+	    	});
+	    	//============================
 		});
-	});
-	
+
+		
+		
+
+		});
+
+
 });
+	
 
 
 
