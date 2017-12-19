@@ -16,6 +16,12 @@ module.exports = function(app) {
 		});
 	});
 
+	app.get("/api/users", function(req, res) {
+		db.Login.findAll({}).then(function(dbLogin) {
+			res.json(dbLogin);
+		});
+	});
+
 	app.get("/api/beersId/:id", function(req, res) {
 		db.Beer.findAll({
 			where: {
@@ -59,6 +65,13 @@ module.exports = function(app) {
 		});
 	});
 
+	app.post("/api/leaderboard", function(req, res) {
+		db.Login.findAll({
+			where: {
+
+			}
+		})
+	})
 	// ==============================================
 	// 			User Info Routes
 	// ==============================================
