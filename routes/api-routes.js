@@ -128,7 +128,7 @@ module.exports = function(app) {
 						}
 					});
 					res.cookie('authToken', token);
-					res.json(loginCredentials);
+					res.redirect("/BeerQuiz");
 				} else{
 					res.send("Username or password incorrect.");
 				};
@@ -160,7 +160,7 @@ module.exports = function(app) {
 			Password: password,
 			Email: email
 		}).then(function(newUser){
-			res.json(newUser);
+			res.redirect("/BeerQuiz");
 		})
 	});
 
