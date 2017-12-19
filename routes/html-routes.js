@@ -14,4 +14,7 @@ module.exports = function(app) {
 		res.sendFile(path.join(__dirname, "../public/userPage.html"));
 	});
 
+	app.get("/Leaderboard", function(req, res) {
+		res.sendFile(path.join(__dirname, "../public/leaderboard.html"));
+	});
 };	
