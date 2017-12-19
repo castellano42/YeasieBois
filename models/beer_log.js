@@ -45,8 +45,6 @@ module.exports = function(sequelize, DataTypes) {
 			type: DataTypes.STRING,
 			allowNull: true
 		},
-
-
 		City_or_State_Of_Origin: {
 			type: DataTypes.STRING,
 			allowNull: true

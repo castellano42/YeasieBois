@@ -1,7 +1,44 @@
-.page-header{ 
-	background-color:#0071b2;
+
+.jumbotron{ 
+	background-color:#fae7bc;
+	/*background-image: url("https://static.vinepair.com/wp-content/uploads/2015/04/hops-header.jpg");*/
+	/*background-size: cover;*/
 	border-radius: 25px;
+	
 }
+#yeast{
+	padding-top: 18px;
+	text-align: center;
+	font-size:80px;
+	color:#c63c22;
+	font-family: 'Monoton', cursive;
+}
+
+
+
+.userlogin{
+	color: #FF9C00;
+	font-family: 'VT323', monospace;
+}
+
+.display-3{
+
+font-family: 'Monoton', cursive;
+
+}
+.fields{
+	font-family: 'Monoton', cursive;
+}
+
+p{
+	font-family: 'VT323', monospace;
+}
+
+.lead{
+	font-family: 'Press Start 2P', cursive;
+}
+
+
 h1{
 	padding-top: 18px;
 	text-align: center;
@@ -9,48 +46,181 @@ h1{
 	color:#FFC049;
 	font-family: "arcade interlaced";
 }
-body{
-	background-color:#FFC049;
+
+
+
+h2{
+	font-family: 'Monoton', cursive;
+	color: #fae7bc;
 }
 
-body{
-	color:#c63c22;
-	font-family:"arcade interlaced";
-	border:4px solid #c63c22;
-	
-
-}
-/*.border-top-0{
-	color:red;
-
-}*/
 h4{
-	color:#0071b2;
+	font-family: 'Press Start 2P', cursive;
 }
 
+
+body{
+	text-align: center;
+	background-color:#c63c22;
+	color:#fae7bc;
+	font-family: 'VT323', monospace;
+	font-size:2em;
+	background-image: url("https://ak7.picdn.net/shutterstock/videos/14391367/thumb/1.jpg") no-repeat center center;
+	background-size: cover;
+}
+
+
+.options{
+	color:#fae7bc;
+	font-size:2em;
+}
+
+.page-footer{
+	margin-top: 20px;
+	background-color: #fae7bc;
+	color: #c63c22;
+	border-radius: 10px;
+	font-family: 'Monoton', cursive;
+}
+.title{
+	color: #c63c22;
+	
+}
+
+
+.submitLoginInfo{
+
+	font-family: 'VT323', monospace;
+
+}
 #logo{
 	height:150px;
 	width:150px;
 }
 
+
 .row{
-	border:1px dashed #c63c22 ;
+	
 	margin:8px;
 }
 
+
 h3{
-	color:#FFC049;
+	color:#c63c22;
 	text-align: center;
+	font-size:2em;
+	font-family: 'Monoton', cursive;
 }
 
 #aroma{
-	background-color: #c63c22;
+	background-color: #fae7bc;
+
+
 }
 
 #appearance{
-	background-color: #c63c22;
+	background-color: #fae7bc;
 }
 
 #flavor{
+	background-color: #fae7bc;
+}
+#reviewSubmitButton{
+	color:black;
+}
+.textinput{
+	color:black;
+}
+.page-footer{
+    margin-top: 20px;
+    background-color: #fae7bc ;
+    color: #c63c22 ;
+    border-radius: 10px;
+    font-family: ‘Press Start 2P’, cursive;
+}
+#tips{
+	color:black;
+}
+
+#tips:hover{
 	background-color: #c63c22;
+}
+/*html {
+  background: radial-gradient(#246, #002);
+  height: 100%;
+}*/
+
+.popup{
+	margin-top: 10px;
+	margin-bottom: 0;
+	border-radius: 8px;
+}
+p{
+ visibility:hidden;
+ background-color:#fae7bc;
+ color:#c63c22;
+}
+button:hover + p {
+  visibility:visible;
+}
+
+ 
+
+  span.ibu {
+  height: 0;
+  color: #fff;
+  position: relative;
+  cursor: pointer;
+}
+ 
+ span.ibu:after {
+ 	color:#c63c22;
+    content: attr(data-ibutext);
+    background-color:#fae7bc;
+    border-radius: 3px;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    position: absolute;
+    transition: 500ms ease;
+    
+    
+  }
+  
+ span.ibu:hover:after {
+    opacity: 1;
+    top: 1.2em;
+    max-height: 200px;
+    padding: .4em;
+  }
+    span.abv {
+  height: 0;
+  color: #fff;
+  position: relative;
+  cursor: pointer;
+  width: 100px;
+}
+ 
+ span.abv:after {
+ 	color:#c63c22;
+    content: attr(data-abvtext);
+    background-color:#fae7bc;
+    border-radius: 3px;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    position: absolute;
+    transition: 500ms ease;
+    width: 100px;
+    
+    
+  }
+  
+ span.abv:hover:after {
+    opacity: 1;
+    top: 1.2em;
+    max-height: 200px;
+    padding: .4em;
+    width: 100px;
+  }
 }

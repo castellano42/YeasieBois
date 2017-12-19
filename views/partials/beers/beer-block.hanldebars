@@ -1,0 +1,11 @@
+<li>
+	{{beer_name}}
+
+	<button class="" data-id="{{}}"
+	data-new="{{}}">
+		{{#if}}{{else}}{{/if}}
+	</button>
+
+	<button class="" data-id="{{}}">
+	</button>
+</li>	

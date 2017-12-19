@@ -7,6 +7,9 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
 	 <link rel="stylesheet" type="text/css" href="css/style.css">
+	 <link href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet">
+	 <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
+
 	<script
   	src="https://code.jquery.com/jquery-3.2.1.min.js"
   	integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
@@ -17,25 +20,39 @@
 	<div class ="container">
 	<div class="row">
 	<div class="col-sm-12 col-md-12 col-lg-12">
-	<div class="page-header">
-	<h1 id="yeast">Yeastie Bois  <img src="./images/beerlogo.png" id="logo"></h1> <!-- <h3>Beer Form</h3> -->
+	 <div class="jumbotron">
+	 	 <h1 id="yeast">Yeastie Bois  <img src="./images/beerlogo.png" id="logo"></h1>
+	</div>
+	
+	
 </div>		
 	</div>
+	<form name="beerReviewForm">
+		<div class="row">
+		<div class="col-md-6 col-md-offset-3">
+		<button id="tips">Tips</button>
+
+		  <p class="popup">This is a quiz to see how accurate your beer taste is. You will earn 2 points for matches and lose one for mismatches. 5 points for matching IBU or ABV</p>
+		 </div>
+		
 	</div>
 
+
+
+		<h3>Beer Name:</h3>
+		  <select id="allBeerList" name="beerName"></select>
+	
 	<div class="row" id="aroma">
 	<div class="col-sm-12 col-md-12 col-lg-12">	
 		<h3>Aroma</h3>
 	</div>
 	</div>
 
-	<form name="beerReviewForm">
-		<h3>Beer Name:</h3>
-		  <select id="allBeerList" name="beerName"></select>
+	
 
 	<div class="row">
 	<div class="col-sm-12 col-md-12 col-lg-12">	
-		<h4>Malt Aroma</h4>
+		<h4 class ="options">Malt Aroma</h4>
 		<input type="checkbox" name="aromaMalt" value="sweet"> Sweet
 		<input type="checkbox" name="aromaMalt" value="grainy"> Grainy
 		<input type="checkbox" name="aromaMalt" value="toasty"> Toasty
@@ -50,7 +67,7 @@
 
 	<div class="row">
 	<div class="col-sm-12 col-md-12 col-lg-12">	
-		<h4>Hops Aroma</h4>
+		<h4 class ="options">Hops Aroma</h4>
 		<input type="checkbox" name="aromaHops" value="peppery"> Peppery
 		<input type="checkbox" name="aromaHops" value="citrus"> Citrus
 		<input type="checkbox" name="aromaHops" value="floral"> Floral
@@ -70,7 +87,7 @@
 	</div>	
 	<div class="row">
 	<div class="col-sm-12 col-md-12 col-lg-12">	
-		<h4>Clarity</h4>
+		<h4 class ="options">Clarity</h4>
 		<input type="checkbox" name="clarity" value="clear"> Clear
 		<input type="checkbox" name="clarity" value="cloudy"> Cloudy
 		<input type="checkbox" name="clarity" value="hazy"> Hazy
@@ -80,7 +97,7 @@
 
 	<div class="row">
 	<div class="col-sm-12 col-md-12 col-lg-12">	
-		<h4>Color</h4>
+		<h4 class ="options">Color</h4>
 		<input type="checkbox" name="beerColor" value="straw"> Straw
 		<input type="checkbox" name="beerColor" value="yellow"> Yellow
 		<input type="checkbox" name="beerColor" value="gold"> Gold
@@ -102,7 +119,7 @@
 
 	<div class="row">
 	<div class="col-sm-12 col-md-12 col-lg-12">		
-		<h4>Malt Flavor</h4>
+		<h4 class ="options">Malt Flavor</h4>
 		<input type="checkbox" name="flavorMalt" value="sweet"> Sweet
 		<input type="checkbox" name="flavorMalt" value="grainy"> Grainy
 		<input type="checkbox" name="flavorMalt" value="toasty"> Toasty
@@ -117,7 +134,7 @@
 
 	<div class="row">
 	<div class="col-sm-12 col-md-12 col-lg-12">	
-		<h4>Hops Flavor</h4>
+		<h4 class ="options">Hops Flavor</h4>
 		<input type="checkbox" name="flavorHops" value="peppery"> Peppery
 		<input type="checkbox" name="flavorHops" value="citrus"> Citrus
 		<input type="checkbox" name="flavorHops" value="floral"> Floral
@@ -131,24 +148,64 @@
 		
 
 	<div class="row">
-		<div class="col-sm-12 col-md-12 col-lg-12">	
-		<h4>Bonus Points</h4>
 
-		Guess IBU<input type="text" id="ibuBonusPoints" >
-		Guess ABV<input type="text" id="abvBonusPoints" >
+	<div class="col-sm-12 col-md-12 col-lg-12">	<!-- !!!!!!! May not need this div !!!!!!!! -->
+	<div class="col-sm-12 col-md-12 col-lg-12">	
+		<h4>Bonus Points</h4>
+		<span id="ibuBonusPoints" class="ibu" data-ibutext="Bonus Points IBU: 0-100 International Bitter Units.">Guess IBU</span> <input type="text" id="ibuBonusPoints" >
+		<span id="abvBonusPoints" class="abv" data-abvtext="Bonus Points ABV: 0-10 Acohol by volume.">Guess ABV</span> 
+		 <input type="text" id="abvBonusPoints" >
 
 		<h4>Personal Opinion</h4>
 		<p> Rating (1-10):<input type="text" id="rating"></p>
 		<p>Comments: <input type="text" id="comments"></p>
 
 		<button><input type="submit" id="reviewSubmitButton"></button>
-		</div>
+
+	</div>
+
+	</div> <!-- !!!!!!! May not need this div !!!!!!!! -->
+
 	</div>
 	</form>
 	<a id="logoutButton">Logout</a>
 	</div> <!-- CONTAINER CLOSURE -->
 	
+
 	<!-- SUBMIT FORM -->
+
+	<!-- Submission Form JS -->
+
+	
+
+	<footer class="page-footer
+            center-on-small-only">
+
+ 
+    <div class=“container-fluid”>
+        <div class=“row”>
+
+           <div class="col-md-12">
+                <h3 class=“title”>©Yeastie Bois</h3>
+            </div>
+         </div>
+         <div class=“row”>
+             <div class=“col-md-12”>
+
+               <h6 class=“ourNames”>Powered By: Andrew, Tyler, Jesus, Steve</h6>
+            </div>
+         </div>  
+            
+   </div>
+  
+    
+
+  
+
+</footer>	
+	</div>
+
+
 	<script type="text/javascript" src="js/submitForm.js"></script>
 
 	<!-- Grade Submission JS -->

@@ -1,5 +1,7 @@
 var db = require("../models");
 var randToken  = require("rand-token");
+var express = require("express");
+var app = express();
 
 
 
@@ -84,25 +86,8 @@ module.exports = function(app) {
 		});
 	});
 
-	// ==============================================
-	// 			Add Auth Token to User ID --- Probably Not Necessary
-	// ==============================================
-	// 	app.put("/authtoken/:userId", function(req, res) {
 
-	// 	//Set user id equal to a variable from the req.query.id;
-
-	// 	db.Login.update(token, {
-	// 		where: {
-	// 			//where id = Id in that database;
-	// 			id: req.params.id,
-	// 			AuthToken: token
-	// 		}
-	// 	});
-	// });
-
-	// ==============================================
-	// 			Login Route
-	// ==============================================
+	
 	app.get("/login", function(req, res) {
 		var username = req.query.username;
 		var password = req.query.password;
@@ -133,13 +118,16 @@ module.exports = function(app) {
 					res.json(loginCredentials);
 				} else{
 					res.send("Username or password incorrect.");
-				}
+				};
 			
 			} else {
 				res.send("Sorry there was an error logging in.");
+
 			}
 		});
-	});
+		}) 
+
+	
 
 	// ==============================================
 	// 			Sign Up Route
@@ -162,6 +150,7 @@ module.exports = function(app) {
 			res.json(newUser);
 		})
 	});
+
 
 	// ==============================================
 	// 			Get Cookie
@@ -211,17 +200,6 @@ module.exports = function(app) {
 		});
 	});
 };
-
-
-
-
-
-
-
-
-
-
-
 
 
 

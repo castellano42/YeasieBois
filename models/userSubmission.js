@@ -67,5 +67,13 @@ module.exports = function(sequelize, DataTypes) {
 
 		}	
 	});
+	FullUserBeerReview.associaate = function(models) {
+		FullUserBeerReview.belongsTo(models.userInfo.js, {
+			foreignKey: {
+				allowNull: false
+			}
+		});
+	};
+
 	return FullUserBeerReview;
-}
+};
