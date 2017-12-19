@@ -117,7 +117,7 @@ module.exports = function(app) {
 					res.cookie('authToken', token);
 					res.json(loginCredentials);
 				} else{
-					res.send("Username or password incorrect.");
+					res.redirect("/BeerQuiz");
 				};
 			
 			} else {
@@ -164,13 +164,13 @@ module.exports = function(app) {
 			}
 		}).then(function(result) {
 			if(result[0] === undefined){
-				res.redirect("/fake");
+				res.redirect("/");
 			}
 			if(userCookie === result[0].dataValues.AuthToken){
 				res.send(true);
 			}else{
 				console.log("triggering else statement");
-				res.redirect("/fake");
+				res.redirect("/");
 			};
 		});
 	});
@@ -189,13 +189,13 @@ module.exports = function(app) {
 		}).then(function(result) {
 			var userId = result[0].dataValues.id;
 			if(result[0] === undefined){
-				res.redirect("/fake");
+				res.redirect("/");
 			}
 			if(userCookie === result[0].dataValues.AuthToken){
 				res.json({userId: userId});
 			}else{
 				console.log("triggering else statement");
-				res.redirect("/fake");
+				res.redirect("/");
 			};
 		});
 	});

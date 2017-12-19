@@ -5,7 +5,7 @@
 
 function checkLogin(){
 	$.get("/authMatch").then(function(result){
-		console.log(result);
+
 	});
 };
 
