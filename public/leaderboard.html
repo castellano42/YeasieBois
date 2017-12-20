@@ -31,7 +31,34 @@
 	 				
 	 			</div>
 	 		</div>
-	 	</div>			 			
+	 	</div>		
+	<footer class="page-footer
+			center-on-small-only">
+
+   
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-md-12">
+                <h3 class="title">©Yeastie Bois</h3>
+            </div>
+         </div>
+         <div class="row">
+         	<div class="col-md-12">
+
+                <h6 class="ourNames">Powered By: Andrew, Tyler, Jesus, Steve</h6>
+            </div>
+         </div>   
+            
+    </div>
+   
+    
+
+   
+
+</footer>
+
+
 	</div>
 <script type="text/javascript">
 var leaderboardArray = [];
@@ -48,12 +75,16 @@ $.get("/api/users", function(data){
 			};
 		leaderboardArray.push(object);
 	}
-	leaderboardArray.sort(object);
+	leaderboardArray.sort(function(object){
+
+	});
 
 	for(i=0; i<leaderboardArray.length; i++){
 		var div = document.createElement("div");
-		div.innerHTML(leaderboardArray[i].Username + " " + leaderboardArray[i].Userscore);
-		$(".leaderboard").appendChild(div);
+		div.innerHTML = object[i];
+		div.
+		// div.innerHTML(leaderboardArray[i].Username + " " + leaderboardArray[i].Userscore);
+		$("#leaderboard").appendChild(div);
 	};
 			
 
@@ -68,8 +99,7 @@ $.get("/api/users", function(data){
 	// 	data.Username,
 	// 	data.Userscore
 	// 	)
-	}
-});
+	});
 
 
 
