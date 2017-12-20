@@ -39,45 +39,31 @@ var sel = document.getElementById('leaderboard');
 	
 
 $.get("/api/users", function(data) {
+	console.log(data);
 	for(i=0; i<data.length; i++){
 
-	
 			var object = {
-				Username: data.Username,
-				Userscore: data.Userscore
+				Username: data[i].Username,
+				Userscore: data[i].UserScore
 			};
+			console.log(object);
 		leaderboardArray.push(object);
 	}
-	leaderboardArray.
+
+	// myArray.sort(function(a, b) {
+ 	// return a.distance - b.distance;
+	// });
+
+	leaderboardArray.sort(function(b,a){
+		return a.Userscore - b.Userscore;
+	});
 
 	for(i=0; i<leaderboardArray.length; i++){
-		var div = document.createElement("div");
-		div.innerHTML(leaderboardArray[i].Username + " " + leaderboardArray[i].Userscore);
-		$(".leaderboard").appendChild(div);
+		var newDiv = document.createElement("div");
+		newDiv.innerHTML = leaderboardArray[i].Username + " " + leaderboardArray[i].Userscore;
+		sel.appendChild(newDiv);
 	};
-			
-
-		// div.innerHTML = data[i].Username.trim();
-		// div.value = data[i].Username.trim();
-		// sel.appendChild(div);
-		// allUsers.push(data[i].Username.trim());
-		// correspondingScore.push(data[i].Userscore);
-
-
-	// .append("<h2> 'leaderboard' "
-	// 	data.Username,
-	// 	data.Userscore
-	// 	)
-	}
 });
-
-
-
-
-	// }).done(function(response) {
-	// 	$(.leaderboard).text(JSON.stringify(response));
-	// })
-
 
 
 </script>	
