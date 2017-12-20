@@ -65,27 +65,36 @@ var leaderboardArray = [];
 var sel = document.getElementById('leaderboard');
 	
 
-$.get("/api/users", function(data){
+$.get("/api/users", function(data) {
+	console.log(data);
 	for(i=0; i<data.length; i++){
 
-	
 			var object = {
-				Username: data.Username,
-				Userscore: data.Userscore
+				Username: data[i].Username,
+				Userscore: data[i].UserScore
 			};
+			console.log(object);
 		leaderboardArray.push(object);
 	}
-	leaderboardArray.sort(function(object){
 
+	// myArray.sort(function(a, b) {
+ 	// return a.distance - b.distance;
+	// });
+
+	leaderboardArray.sort(function(b,a){
+		return a.Userscore - b.Userscore;
 	});
 
 	for(i=0; i<leaderboardArray.length; i++){
-		var div = document.createElement("div");
-		div.innerHTML = object[i];
-		div.
-		// div.innerHTML(leaderboardArray[i].Username + " " + leaderboardArray[i].Userscore);
-		$("#leaderboard").appendChild(div);
+		var counter = i + 1;
+		var newDiv = document.createElement("div");
+		newDiv.innerHTML = "#" + counter + ": " + leaderboardArray[i].Username + " " + leaderboardArray[i].Userscore;
+		sel.appendChild(newDiv);
 	};
+});
+
+
+
 			
 
 		// div.innerHTML = data[i].Username.trim();
@@ -99,7 +108,7 @@ $.get("/api/users", function(data){
 	// 	data.Username,
 	// 	data.Userscore
 	// 	)
-	});
+	
 
 
 
