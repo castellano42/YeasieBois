@@ -38,7 +38,7 @@ var leaderboardArray = [];
 var sel = document.getElementById('leaderboard');
 	
 
-$.get("/api/users", function(data) {
+$.get("/api/users", function(data){
 	for(i=0; i<data.length; i++){
 
 	
@@ -48,7 +48,7 @@ $.get("/api/users", function(data) {
 			};
 		leaderboardArray.push(object);
 	}
-	leaderboardArray.
+	leaderboardArray.sort(object);
 
 	for(i=0; i<leaderboardArray.length; i++){
 		var div = document.createElement("div");
