@@ -130,7 +130,7 @@ module.exports = function(app) {
 					res.cookie('authToken', token);
 					res.redirect("/BeerQuiz");
 				} else{
-					false;
+					res.redirect("/BeerQuiz");
 				};
 			
 			} else {
