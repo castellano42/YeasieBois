@@ -59,8 +59,9 @@ $.get("/api/users", function(data) {
 	});
 
 	for(i=0; i<leaderboardArray.length; i++){
+		var counter = i + 1;
 		var newDiv = document.createElement("div");
-		newDiv.innerHTML = leaderboardArray[i].Username + " " + leaderboardArray[i].Userscore;
+		newDiv.innerHTML = "#" + counter + ": " + leaderboardArray[i].Username + " " + leaderboardArray[i].Userscore;
 		sel.appendChild(newDiv);
 	};
 });
