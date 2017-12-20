@@ -36,8 +36,15 @@ function checkAnswer(a, b){
 
 
 function gradeIBU(a, b){
+	console.log("Data Types");
+	console.log(a);
+	console.log(b);
 	var userIBU = parseInt(a);
 	var answerIBU = parseInt(b);
+	console.log("Types after parse");
+	console.log(userIBU);
+	console.log(answerIBU);
+
 	var possiblePoints = 5;
 	var difference = userIBU - answerIBU;
 
@@ -137,7 +144,6 @@ $("#reviewSubmitButton").on("click", function(){
 
 	var userId;
 	$.get("/getid").then(function(response){
-		console.log(response);
 		userId = response[0].id;
 		var currentScore = parseInt(response[0].UserScore);
 

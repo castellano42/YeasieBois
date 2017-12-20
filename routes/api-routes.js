@@ -26,6 +26,16 @@ module.exports = function(app) {
 		});
 	});
 
+	app.get("/api/beersUserId/:id", function(req, res) {
+		db.UserSubmissionBeer.findAll({
+			where: {
+				UserId: req.params.id
+			}
+		}).then(function(dbBeer) {
+			res.json(dbBeer);
+		});
+	});
+
 	app.get("/api/beersName/:Beer_Name", function(req, res) {
 		// console.log("BEER NAME!!!!!!!!!!!!!!");
 		// console.log(req.params.Beer_Name);
@@ -115,7 +125,7 @@ module.exports = function(app) {
 						}
 					});
 					res.cookie('authToken', token);
-					res.json(loginCredentials);
+					res.redirect("/BeerQuiz");
 				} else{
 					res.redirect("/BeerQuiz");
 				};
