@@ -53,7 +53,7 @@ module.exports = function(app) {
 		}).then(function(dbBeer) {
 			res.json(dbBeer);
 		});
-	});
+	}); 
 
 	app.get("/api/beersStyle/:Style", function(req, res) {
 		db.Beer.findAll({
@@ -96,6 +96,13 @@ module.exports = function(app) {
 				Rating: rating,
 				Comments: comments
 			}
+		});
+	});
+
+	app.get("/api/userSubmissions", function(req, res){
+		db.FullUserBeerReview.findAll({
+		}).then(function(userSubmissions){
+			res.json(userSubmissions);
 		});
 	});
 

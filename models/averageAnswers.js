@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-	var FullUserBeerReview = sequelize.define("FullUserBeerReview", {
+	var AverageAnswers = sequelize.define("AverageAnswers", {
 		Beer_Name: {
 			type: DataTypes.STRING,
 			allowNull: false
@@ -69,13 +69,13 @@ module.exports = function(sequelize, DataTypes) {
 	},{
 		timestamps: false
 	});
-	// FullUserBeerReview.associate = function(models) {
-	// 	FullUserBeerReview.belongsTo(models.userInfo.js, {
+	// AverageAnswers.associate = function(models) {
+	// 	AverageAnswers.belongsTo(models.userInfo.js, {
 	// 		foreignKey: {
 	// 			allowNull: true
 	// 		}
 	// 	});
 	// };
 
-	return FullUserBeerReview;
+	return AverageAnswers;
 };
