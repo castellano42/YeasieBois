@@ -2,12 +2,12 @@ module.exports = function(sequelize, DataTypes) {
 	var AverageAnswers = sequelize.define("AverageAnswers", {
 		Beer_Name: {
 			type: DataTypes.STRING,
-			allowNull: false
+			allowNull: true
 
 		},
 		Brewery: {
 			type: DataTypes.STRING,
-			allowNull: false
+			allowNull: true
 		},
 		Aroma_Malt: {
 			type: DataTypes.STRING,
@@ -35,15 +35,15 @@ module.exports = function(sequelize, DataTypes) {
 		},
 		IBU: {
 			type: DataTypes.INTEGER,
-			allowNull: false
+			allowNull: true
 		},
 		ABV: {
 			type: DataTypes.DECIMAL(10, 2),
-			allowNull: false
+			allowNull: true
 		},
 		Country_Of_Origin: {
 			type: DataTypes.STRING,
-			allowNull: false
+			allowNull: true
 		},
 		City_or_State_Of_Origin: {
 			type: DataTypes.STRING,
@@ -51,15 +51,15 @@ module.exports = function(sequelize, DataTypes) {
 		},
 		Style: {
 			type: DataTypes.STRING,
-			allowNull: false
+			allowNull: true
 		},
 		Total_Points: {
 			type: DataTypes.INTEGER,
-			allowNull: false
+			allowNull: true
 		},
 		Rating: {
 			type: DataTypes.INTEGER,
-			allowNull: false
+			allowNull: true
 		},
 		Comments: {
 			type: DataTypes.TEXT,

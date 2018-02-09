@@ -1,10 +1,10 @@
-// Author- Tyler Proctor
+ // Author- Tyler Proctor
 // This file will iterate through every user submitted beer review
 // 	and will find the average number of times each term appears in each field
 // 	then add those values to a new object to post into a seperate table
 // 	in order to create a self-optimizing API of beer reviews
 // Speed of this function is not a concern since it is only intended to be run once a week at most and will not be triggered by users
-function optimizeBeerTable() {
+function optimizeBeerTable(callback) {
 	$.get("/api/userSubmissions", function(data, status){
 		// console.log(data);
 
@@ -28,7 +28,7 @@ function optimizeBeerTable() {
 			// Loop through all submissions again to find every beer with a matching name
 			for(k = 0; k < data.length; k++){
 				if(k !== i && data[k].Beer_Name === beerName){
-					matchingBeers.push(data[k]);
+					matchingBeers.push(data[k]); 
 				}
 			}
 
@@ -43,34 +43,41 @@ function optimizeBeerTable() {
 			var submissionCounter = matchingBeers.length;
 			
 			// Loop through the matchingBeers array to find matching terms in each key
-			for(k = 0; k < matchingBeers.length; k++){
-				Aroma_Malt += matchingBeers[k].Aroma_Malt + ",";
-				Aroma_Hops += matchingBeers[k].Aroma_Hops + ",";
-				Appearance_Clarity += matchingBeers[k].Appearance_Clarity + ",";
-				Appearance_Color += matchingBeers[k].Appearance_Color + ",";
-				Flavor_Malt += matchingBeers[k].Flavor_Malt + ",";
-				Flavor_Hops  += matchingBeers[k].Flavor_Hops + ",";
+			for(t = 0; t < matchingBeers.length; t++){
+				Aroma_Malt += matchingBeers[t].Aroma_Malt + ",";
+				Aroma_Hops += matchingBeers[t].Aroma_Hops + ",";
+				Appearance_Clarity += matchingBeers[t].Appearance_Clarity + ",";
+				Appearance_Color += matchingBeers[t].Appearance_Color + ",";
+				Flavor_Malt += matchingBeers[t].Flavor_Malt + ",";
+				Flavor_Hops  += matchingBeers[t].Flavor_Hops + ",";
 			}
 
+			// Split each value to an array then add it to the averageSubmission object
 			Aroma_Malt = Aroma_Malt.split(',');
-			averageSubmission.Aroma_Malt = findCorrectTerms(Aroma_Malt, submissionCounter);
+			averageSubmission.Aroma_Malt = findCorrectTerms(Aroma_Malt, submissionCounter).join();
 
 			Aroma_Hops = Aroma_Hops.split(',');
-			averageSubmission.Aroma_Hops = findCorrectTerms(Aroma_Hops, submissionCounter);
+			averageSubmission.Aroma_Hops = findCorrectTerms(Aroma_Hops, submissionCounter).join();
 
 			Appearance_Clarity = Appearance_Clarity.split(',');
-			averageSubmission.Appearance_Clarity = findCorrectTerms(Appearance_Clarity, submissionCounter);
+			averageSubmission.Appearance_Clarity = findCorrectTerms(Appearance_Clarity, submissionCounter).join();
 
 			Appearance_Color = Appearance_Color.split(',');
-			averageSubmission.Appearance_Color = findCorrectTerms(Appearance_Color, submissionCounter);
+			averageSubmission.Appearance_Color = findCorrectTerms(Appearance_Color, submissionCounter).join();
 
 			Flavor_Malt = Flavor_Malt.split(',');
-			averageSubmission.Flavor_Malt = findCorrectTerms(Flavor_Malt, submissionCounter);
+			averageSubmission.Flavor_Malt = findCorrectTerms(Flavor_Malt, submissionCounter).join();
 
 			Flavor_Hops  = Flavor_Hops.split(',');
-			averageSubmission.Flavor_Hops = findCorrectTerms(Flavor_Hops, submissionCounter);
+			averageSubmission.Flavor_Hops = findCorrectTerms(Flavor_Hops, submissionCounter).join();
 
-			console.log(averageSubmission);
+			console.log(i);
+			// console.log(averageSubmission);
+			// console.log(matchingBeers); 
+
+
+
+			callback(beerName, averageSubmission);
 
 		}
 	}); 
@@ -111,6 +118,26 @@ function findCorrectTerms(array, numberOfSubmissions) {
 	return answerArray;
 }
 
-optimizeBeerTable();
+function updateNewAverage(beerName, averageSubmission) {
+					//Check to see if beer already exists in AverageAnswers table with a get request
+			$.get("/api/checkAverageSubmissions", {beerName: beerName}, function(data, status){
+				//Conditional checks whether beer exists in the Average Submissions
+				console.log(data);
+				if(data.length < 1){
+					//create beer in DB if it doesn't already exist
+					$.post("/api/createAveragedSubmissions", averageSubmission, function(data, status){
+						console.log("posted");
+					});
+
+				} else {
+					//update beer in DB if it does already exist
+					$.post("/api/updateAveragedSubmissions", averageSubmission, function(data, status){
+						console.log("updated");
+					});
+				}
+			});
+};
+
+optimizeBeerTable(updateNewAverage); 
 
 

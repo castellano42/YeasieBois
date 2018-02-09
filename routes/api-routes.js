@@ -1,3 +1,5 @@
+//Authors- Tyler Proctor & Jesus Coloyan
+
 var db = require("../models");
 var randToken  = require("rand-token");
 var express = require("express");
@@ -72,6 +74,7 @@ module.exports = function(app) {
 			}
 		})
 	})
+
 	// ==============================================
 	// 			User Info Routes
 	// ==============================================
@@ -99,6 +102,10 @@ module.exports = function(app) {
 		});
 	});
 
+
+	// ==============================================
+	// 			Get All User Submissions
+	// ==============================================
 	app.get("/api/userSubmissions", function(req, res){
 		db.FullUserBeerReview.findAll({
 		}).then(function(userSubmissions){
@@ -107,7 +114,9 @@ module.exports = function(app) {
 	});
 
 
-	
+	// ==============================================
+	// 			Login Route
+	// ==============================================	
 	app.get("/login", function(req, res) {
 		var username = req.query.username;
 		var password = req.query.password;
@@ -153,14 +162,9 @@ module.exports = function(app) {
 	// 			Sign Up Route
 	// ==============================================
 	app.post("/newuser", function(req, res) {
-		// console.log(req);
 		var username = req.body.signUpUser;
 		var email = req.body.signUpEmail;
 		var password = req.body.signUpPass;
-
-		// console.log(username);
-		// console.log(email);
-		// console.log(password);
 
 		db.Login.create({
 			Username: username,
@@ -241,7 +245,68 @@ module.exports = function(app) {
 			res.end();
 		});
 	});
+
+
+	// ===========================================
+	// 		Update Averaged Beer Submission
+	// ===========================================
+	app.put("/api/updateAveragedSubmissions", function(req, res) {
+		console.log("update route");
+		var beerName = "";
+		// db.AverageAnswers.udate({
+		// 	where: {
+		// 		Beer_Name: beerName
+		// 	}
+		// })
+	});
+
+
+	// ===========================================
+	// 		Create Averaged Beer Submission
+	// ===========================================
+	app.post("/api/createAveragedSubmissions", function(req, res) {
+		console.log("");
+		console.log("");
+		console.log("Create new beer submissions!!!!!!");
+		console.log(req.body);
+		var newSubmission = req.body;
+		db.AverageAnswers.create(newSubmission).then(function(status){
+			res.end();
+		});
+	});
+
+
+	// =========================================================
+	// 	Check If A Beer Already Exists in Average Answers Table
+	// =========================================================
+	app.get("/api/checkAverageSubmissions", function(req, res){
+		var beerName = req.query.beerName;
+		db.AverageAnswers.findAll({
+			where: {
+				Beer_Name: beerName
+			}
+		}).then(function(beerName){
+			res.json(beerName);
+		});
+	});
 };
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
